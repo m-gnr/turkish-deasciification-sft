@@ -40,7 +40,7 @@ Model farkları için eşleştirilmiş bootstrap güven aralıkları hesaplanır
 
 - [Ayrıntılı ölçüm planı ve pilot veri kararları](<docs/plans/Deasciification Projesi Ölçüm Planı ve Pilot Veri.md>) deney kurallarının ana kaynağıdır.
 - [Pilot veri](data/pilot.jsonl) 34 kayıt içerir; üç `zaten_dogru` örneği ve dört minimal çift için `pair_id` / `focus_word_index` etiketleri eklendi.
-- Pilot ölçüm kodu ve hata analizi hazır; 13 otomatik kontrol geçti. Büyük veri üretimi, base modelin tüm pilot üzerindeki değerlendirmesi ve SFT eğitimi henüz tamamlanmadı.
+- Pilot ölçüm kodu ve hata analizi hazır; 13 otomatik kontrol geçti. Qwen3-1.7B modelinin sıfır örnekli tüm pilot değerlendirmesi tamamlandı. Büyük veri üretimi ve SFT eğitimi henüz tamamlanmadı.
 
 Bu README deney tasarımını özetler; eğitim tamamlandığı veya başarı elde edildiği iddiası içermez. Yalnızca ana model eğitilirse koruma örneklerinin katkısı ayrı olarak kanıtlanmış sayılmaz.
 
@@ -68,3 +68,46 @@ Raporun `resampling_groups` alanı hem kaynak hem minimal çift bağlantıların
 Önceki 33 kayıtlık sürümün gerçek dosya üzerinde doğrulanan sonucu 165/256 (%64,45) idi; [eski rapor](reports/pilot-identity-33.json) veri özeti ve kayıtlarıyla saklanır. Yeni sonuçtaki fark eklenen test örneğinden kaynaklanır, model değişiminden değil.
 
 `validate_pilot.py`, sağlanan betiğin değiştirilmemiş kopyasıdır. Yakın kaynak uyarıları `source_id` atanmış olsa da gösterilir. Betik hata bulduğunda başarısız çıkış kodu üretmez; otomatik geçme/kalma kontrolü için yukarıdaki unittest komutu kullanılmalıdır.
+
+## Eğitim öncesi model: ilk pilot sonucu
+
+Qwen3-1.7B, mevcut yönergeyle ve düşünme modu kapalı olarak 34 girdide çalıştırıldı.
+Burada “base”, projeye özel SFT öncesindeki Qwen3-1.7B checkpoint'idir; ham ön eğitim modeli iddiası değildir.
+
+| Ölçüm | Hiç değiştirme | SFT öncesi model |
+| --- | --- | --- |
+| Cümle tam eşleşmesi | 4/34 (%11,76) | 6/34 (%17,65) |
+| Katı yönerge uyumu | 34/34 (%100) | 31/34 (%91,18) |
+| Gerekli düzeltme başarısı | 0/95 (%0) | 8/95 (%8,42) |
+| Doğru kelimeleri koruma | 68/68 (%100) | 56/68 (%82,35) |
+| Aday harf doğruluğu | 165/260 (%63,46) | 149/260 (%57,31) |
+| Minimal çift başarısı | 0/4 | 0/4 |
+
+Uyumsuz cevapların ilgili tüm birimleri ana metriklerde başarısız sayılır. Bu yüzden
+8/95, ham çıktıda görülen bütün doğru harf değişimlerinin sayısı değildir; katı ölçümün sonucudur.
+Aynı şekilde 56/68, doğrudan bozulmuş kelime sayısından türetilen bir oran değildir.
+Model dört değişiklik gerektirmeyen girdiyi korudu; düzeltme gerektiren 30 cümlenin
+ikisini tam doğru yaptı. Henüz SFT sonucu veya istatistiksel üstünlük iddiası yoktur.
+
+Örnekler:
+
+- `Google uzerinden arama yaptim.` → `Google üzerinden arama yaptım.`: tam doğru.
+- `bugun hava cok guzel.` → `bugun hava çok güzel.`: `bugun` eksik kaldı.
+- `her sabah ise gidiyor` → aynı metin: bağlamın gerektirdiği `işe` düzeltmesi yapılmadı.
+- `p029` ve `p030`: boşluk/sekme düzeni değişti; `p015`: kelime yapısı bozuldu.
+
+[Ham cevaplar](reports/pilot-base-predictions.jsonl),
+[çalıştırma ayarları](reports/pilot-base-predictions.metadata.json) ve
+[ayrıntılı puanlama](reports/pilot-base.json) saklanır. Hiçbir örnek 128 yeni token sınırına ulaşmadı.
+Bu küçük geliştirme pilotu, bağımsız nihai test değildir.
+
+Yeniden çalıştırma (mevcut sonuçları korumak için yeni çıktı adı kullanın):
+
+```bash
+.venv/bin/python run_pilot.py --output reports/pilot-base-rerun.jsonl
+.venv/bin/python evaluate.py --predictions reports/pilot-base-rerun.jsonl --report reports/pilot-base-rerun.json
+```
+
+`run_pilot.py` yalnızca yönerge ve girdiyi modele iletir; hedefler ve değerlendirme
+etiketleri isteme eklenmez. Model revision'ı, yönerge, paket sürümleri, veri özeti,
+ham cevaplar ve üretilen token kimlikleri kaydedilir. Mevcut çıktıların üzerine yazılmaz.

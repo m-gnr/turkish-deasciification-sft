@@ -193,3 +193,18 @@ Sağlanan `validate_pilot.py` betiği önce gerçek 33 kayıtlık dosyada çalı
 - Örnekleme grupları hem `source_id` hem `pair_id` bağlantılarının geçişli birleşimidir; raporda saklanır. Bootstrap güven aralığı henüz uygulanmadı.
 - Ölçüm kodu, 12 uygun konumun tüm 4.094 kısmi maskesinde doğru çıktı ve hiç-değiştirme çıktısıyla sınandı. Bu yapay test dizileri pilot veya eğitim örnekleri değildir.
 - Yeni rapor hem veri hem ölçüm kodunun SHA-256 özetini içerir. Önceki ve yeni pilot oranları farklı veri sürümlerine aittir.
+
+## SFT öncesi pilot çalıştırması
+
+Qwen3-1.7B revision `70d244cc86ccca08cf5af4e1e306ecf908b1ad5e` ile 34 girdinin
+sıfır örnekli değerlendirmesi tamamlandı. Mevcut `deneme.py` yönergesi, greedy üretim,
+`enable_thinking=False`, 128 yeni token sınırı ve yerel MPS/float16 kullanıldı.
+Ham çıktılara temizlik uygulanmadı; hedefler modele gösterilmedi.
+
+Cümle tam eşleşmesi 6/34, katı uyum 31/34, gerekli düzeltme 8/95,
+doğru kelime koruma 56/68 ve minimal çift başarısı 0/4 bulundu.
+Uyumsuz cevapların ilgili birimleri ana metriklerde başarısız sayılır.
+Üç kural ihlali p015, p029 ve p030 kayıtlarındadır; hiçbir çıktı token sınırına ulaşmadı.
+Ham cevaplar ve üretim metadatası `reports/pilot-base-predictions.*`, puanlama
+`reports/pilot-base.json` içinde saklanır. 13 mevcut otomatik kontrol geçti.
+Bu sonuç geliştirme pilotuna aittir; SFT henüz yapılmadı ve bağımsız nihai test sonucu değildir.
