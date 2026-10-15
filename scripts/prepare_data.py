@@ -40,13 +40,15 @@ def main():
     args.output.parent.mkdir(parents=True, exist_ok=True)
     temp = Path(tempfile.mkdtemp(prefix='.prepare-', dir=args.output.parent))
     try:
+        for folder in ('splits', 'metadata', 'source'):
+            (temp / folder).mkdir()
         for split, rows in splits.items():
-            write_jsonl(temp / f'{split}.jsonl', rows)
-        write_jsonl(temp / 'sources.jsonl', [dict(r, split=s) for s, rows in source_splits.items() for r in rows])
-        write_jsonl(temp / 'excluded.jsonl', rejected)
-        shutil.copyfile(args.raw_dir / 'LICENSE.txt', temp / 'LICENSE.txt')
-        shutil.copyfile(args.raw_dir / 'README.md', temp / 'SOURCE_README.md')
-        manifest = dict(schema_version=1, source=config, seed=args.seed, python=platform.python_version(),
+            write_jsonl(temp / 'splits' / f'{split}.jsonl', rows)
+        write_jsonl(temp / 'metadata' / 'sources.jsonl', [dict(r, split=s) for s, rows in source_splits.items() for r in rows])
+        write_jsonl(temp / 'metadata' / 'excluded.jsonl', rejected)
+        shutil.copyfile(args.raw_dir / 'LICENSE.txt', temp / 'source' / 'LICENSE.txt')
+        shutil.copyfile(args.raw_dir / 'README.md', temp / 'source' / 'README.md')
+        manifest = dict(schema_version=2, source=config, seed=args.seed, python=platform.python_version(),
                         source_config_sha256=digest(args.source_config),
                         protected_files={str(p): digest(p) for p in excludes},
                         code_sha256={p: digest(p) for p in ('deasciification/data.py', 'deasciification/validation.py', 'scripts/prepare_data.py')},
@@ -64,7 +66,7 @@ def main():
                                         variants=dict(Counter(r['variant'] for r in rows)),
                                         preservation_subtypes=dict(Counter(r['subcategory'] for r in rows if r['variant']=='koruma')))
                                 for s, rows in splits.items()}, audit=checks,
-                        files={p.name: digest(p) for p in sorted(temp.iterdir())})
+                        files={p.relative_to(temp).as_posix(): digest(p) for p in sorted(temp.rglob('*')) if p.is_file()})
         (temp / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         temp.rename(args.output)
     except BaseException:

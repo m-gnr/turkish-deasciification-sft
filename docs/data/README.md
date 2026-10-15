@@ -5,7 +5,7 @@
 TABILAB / Boğaziçi Üniversitesi tarafından Türkçe Ulusal Derlemi metinlerinden
 hazırlanmıştır. Kaynak ve türetilmiş veri CC BY-SA 4.0 kapsamındadır; projenin
 Apache lisansı bu verinin lisansını değiştirmez. Yazarlar, atıflar ve kaynak
-lisansı çıktı klasöründeki `SOURCE_README.md` ve `LICENSE.txt` dosyalarında korunur.
+lisansı çıktı klasöründeki `source/README.md` ve `source/LICENSE.txt` dosyalarında korunur.
 Bu projedeki değişiklikler: cümle seçimi, NFC normalizasyonu, tekrar eleme,
 yeniden bölümleme ve sentetik Türkçe karakter bozmasıdır.
 
@@ -70,14 +70,19 @@ Aynı kaynak dosyaları, kod, Python sürümü ve tohumla çıktı dosyaları ye
 
 ## Çıktılar ve denetim
 
-- `train.jsonl`, `validation.jsonl`, `test.jsonl`: `id`, `source_id`, `input`,
+- `splits/train.jsonl`, `splits/validation.jsonl`, `splits/test.jsonl`: `id`, `source_id`, `input`,
   `target`, `variant`, `category`, `split` ve kaynak bilgileri.
-- `sources.jsonl`: temiz kaynakların **tam** bölüm atamaları; kota nedeniyle
+- `metadata/sources.jsonl`: temiz kaynakların **tam** bölüm atamaları; kota nedeniyle
   kullanılmayan cümleler de dahildir. Sonraki baseline sözlükleri yalnız eğitim
   bölümünden oluşturulmalıdır.
-- `excluded.jsonl`: dışlanan kaynak kimliği, neden ve varsa tekrar temsilcisi.
+- `metadata/excluded.jsonl`: dışlanan kaynak kimliği, neden ve varsa tekrar temsilcisi.
 - `manifest.json`: kaynak sürümü/özetleri, pilot ve ek test özetleri, kod özetleri,
   üretim kuralları, gerçek oranlar, alt tür sayıları ve çıktı dosyası özetleri.
+
+Klasör ağacı ve kullanım rehberi: [data/prepared/README.md](../../data/prepared/README.md).
+Yeni çıktılar manifest şeması 2 ile üretilir; denetim komutu eski düz şemayı da
+okur. Mevcut BOUN v1 yalnızca yeniden düzenlenmiştir: veri içerikleri ve üretim
+anındaki kod özetleri korunmuş, manifestte dosya yolları güncellenmiştir.
 
 `audit_data` dosya özetlerini, kaynak ayrılığını, girdi-hedef dönüşümlerini,
 karışımı, yakın tekrarları ve korunan testlerle örtüşmeyi denetler; hata durumunda

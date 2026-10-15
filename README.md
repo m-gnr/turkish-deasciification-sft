@@ -213,6 +213,8 @@ python3 -m scripts.audit_data data/prepared/boun-v1
 
 Mevcut çıktı klasörüne yeniden yazılmaz; tekrar üretim için yeni ad kullanın.
 [Üretim raporu](data/prepared/boun-v1/manifest.json), kaynak atamaları ve dışlama
-kayıtları verinin yanında tutulur. Veri hazırlama için yedi yeni testle toplam
+kayıtları verinin yanında tutulur. Eğitim dosyaları `splits/`, denetim kayıtları
+`metadata/`, lisans ve kaynak açıklaması `source/` altındadır;
+[klasör rehberi](data/prepared/README.md) dosyaların rollerini açıklar. Veri hazırlama için yedi yeni testle toplam
 20 otomatik kontrol vardır. Sıradaki aşama eğitim örneklerinin içerik kontrolü,
 birkaç örnekli istem karşılaştırması ve küçük SFT denemesidir.

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "source": {
     "name": "UD Turkish BOUN",
     "revision": "cfa62ac55a426d596700eceac436944e5cf0a967",
@@ -121,12 +121,16 @@
     "near_duplicate_pairs": 0
   },
   "files": {
-    "LICENSE.txt": "899b1804a12ebc090b96339614eede1b64b686721b650a71430b55b5235f7f79",
-    "SOURCE_README.md": "5046f1a7b2d338fc87e1343bda6f08a19e2e0b0c64f7a84bc0f738c43d6f89f9",
-    "excluded.jsonl": "3a7afa7aeaa439d17cd043c1a9de483183c5b701acff38002e930ac9447bacf4",
-    "sources.jsonl": "a37142d3669d5d97689c5299569d153d14e6d712f080d42a5eebdc6504bc3183",
-    "test.jsonl": "6d88b80ca8d9610154a8b02c85092d8c0d0ba6cf29b0b08fde6527f368a16447",
-    "train.jsonl": "48cd9494bd76b6a6fbaabdeac88ace006094662115e53cc9f48e8debc7da3b56",
-    "validation.jsonl": "156ac8ac05691d0ec668ad43e54b3918ead51520f73fa187cc64d212a06660cd"
+    "source/LICENSE.txt": "899b1804a12ebc090b96339614eede1b64b686721b650a71430b55b5235f7f79",
+    "source/README.md": "5046f1a7b2d338fc87e1343bda6f08a19e2e0b0c64f7a84bc0f738c43d6f89f9",
+    "metadata/excluded.jsonl": "3a7afa7aeaa439d17cd043c1a9de483183c5b701acff38002e930ac9447bacf4",
+    "metadata/sources.jsonl": "a37142d3669d5d97689c5299569d153d14e6d712f080d42a5eebdc6504bc3183",
+    "splits/test.jsonl": "6d88b80ca8d9610154a8b02c85092d8c0d0ba6cf29b0b08fde6527f368a16447",
+    "splits/train.jsonl": "48cd9494bd76b6a6fbaabdeac88ace006094662115e53cc9f48e8debc7da3b56",
+    "splits/validation.jsonl": "156ac8ac05691d0ec668ad43e54b3918ead51520f73fa187cc64d212a06660cd"
+  },
+  "layout_migration": {
+    "from_schema_version": 1,
+    "note": "Paths reorganized only; dataset bytes and original generation provenance preserved."
   }
 }

@@ -14,15 +14,20 @@ def main():
     for name, expected in manifest['files'].items():
         if digest(args.directory / name) != expected:
             raise ValueError(f'Output checksum mismatch: {name}')
+    version = manifest['schema_version']
+    if version not in (1, 2):
+        raise ValueError(f'Unsupported dataset schema: {version}')
+    split_dir = args.directory / 'splits' if version == 2 else args.directory
+    metadata_dir = args.directory / 'metadata' if version == 2 else args.directory
     protected = []
     for name, expected in manifest['protected_files'].items():
         if digest(name) != expected:
             raise ValueError(f'Protected data changed: {name}; build a new dataset version')
         protected.extend(read_jsonl(name))
     keys = {comparison_key(r[f]) for r in protected for f in ('input', 'target')}
-    splits = {s: read_jsonl(args.directory / f'{s}.jsonl') for s in ('train', 'validation', 'test')}
+    splits = {s: read_jsonl(split_dir / f'{s}.jsonl') for s in ('train', 'validation', 'test')}
     result = audit(splits)
-    sources = read_jsonl(args.directory / 'sources.jsonl')
+    sources = read_jsonl(metadata_dir / 'sources.jsonl')
     by_id = {r['source_id']: r for r in sources}
     if len(by_id) != len(sources):
         raise ValueError('Source split assignments are not unique')
