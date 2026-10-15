@@ -1,0 +1,22 @@
+{
+  "model": "Qwen/Qwen3-1.7B",
+  "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "device": "mps",
+  "torch": "2.14.1",
+  "instruction": "Metindeki eksik Türkçe karakterleri bağlama göre geri yükle. Yalnızca şu dönüşümlere izin ver: c→ç, C→Ç, g→ğ, G→Ğ, i→ı, I→İ, o→ö, O→Ö, s→ş, S→Ş, u→ü, U→Ü. Gerekmeyen harfleri değiştirme. Diğer karakterleri, mevcut Türkçe harfleri, boşlukları ve noktalama işaretlerini aynen koru. Yazım hatalarını düzeltme. Yalnızca sonuç metnini yaz; açıklama veya tırnak ekleme.",
+  "enable_thinking": false,
+  "do_sample": false,
+  "max_new_tokens": 128,
+  "input": "bugun hava cok guzel.",
+  "output": "bugun hava çok güzel.",
+  "generated_token_ids": [
+    2313,
+    359,
+    305,
+    2907,
+    57012,
+    129032,
+    13,
+    151645
+  ]
+}
