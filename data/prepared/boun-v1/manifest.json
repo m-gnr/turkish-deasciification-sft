@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "source": {
+    "name": "UD Turkish BOUN",
+    "revision": "cfa62ac55a426d596700eceac436944e5cf0a967",
+    "release": "r2.16",
+    "license": "CC-BY-SA-4.0",
+    "files": {
+      "README.md": {
+        "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Turkish-BOUN/cfa62ac55a426d596700eceac436944e5cf0a967/README.md",
+        "sha256": "5046f1a7b2d338fc87e1343bda6f08a19e2e0b0c64f7a84bc0f738c43d6f89f9"
+      },
+      "LICENSE.txt": {
+        "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Turkish-BOUN/cfa62ac55a426d596700eceac436944e5cf0a967/LICENSE.txt",
+        "sha256": "899b1804a12ebc090b96339614eede1b64b686721b650a71430b55b5235f7f79"
+      },
+      "tr_boun-ud-train.conllu": {
+        "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Turkish-BOUN/cfa62ac55a426d596700eceac436944e5cf0a967/tr_boun-ud-train.conllu",
+        "sha256": "373fe39e3acdba3219521f54fa5ae768851fbb4bf9a31079ad1ca6590410650c"
+      },
+      "tr_boun-ud-dev.conllu": {
+        "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Turkish-BOUN/cfa62ac55a426d596700eceac436944e5cf0a967/tr_boun-ud-dev.conllu",
+        "sha256": "f6d1ed6e3b57b4e658177eb16089e9fb616bc68fb110eb0894c2b409e41b5c76"
+      },
+      "tr_boun-ud-test.conllu": {
+        "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Turkish-BOUN/cfa62ac55a426d596700eceac436944e5cf0a967/tr_boun-ud-test.conllu",
+        "sha256": "4f74fc0f9efdd1285d781f3efd1e98cbf39cf4433df9eb4dc14162e8ed36773b"
+      }
+    }
+  },
+  "seed": 20261015,
+  "python": "3.12.3",
+  "source_config_sha256": "e2cc237d5d27e43c39f2b636743073e4951de111f5f29cf65a885cf4666a4085",
+  "protected_files": {
+    "data/pilot.jsonl": "620618ad745c34a430c17755b72dadf534d6517babf3e706a749b3c868ed880d"
+  },
+  "code_sha256": {
+    "deasciification/data.py": "6fdb4edb009d95fa354386be2883fb4d62439865d2a90233ffff3c679019acf7",
+    "deasciification/validation.py": "5408ead2927e4553ac96ee2418d243f716e0fda5e6b91be74cc512fe49dcb52b",
+    "scripts/prepare_data.py": "3b807983203fadea5faed84f3a201976cde4028dad9789af7356a83c5acce07a"
+  },
+  "rules": {
+    "split": "80/10/10 stratified by 0,1,>=2 corruptible positions; largest remainder",
+    "normalization": "NFC only for targets; comparison key ASCII folds, lowercases, removes punctuation, collapses spaces",
+    "quality": "10..500 characters, >=3 whitespace words, alphabetic content, no Unicode C categories or U+0307",
+    "near_duplicate": "character trigram set Jaccard >=0.8; connected components, lexicographically first source_id",
+    "protected": "substring, trigram Jaccard >=0.8 or symmetric SequenceMatcher >=0.8, autojunk=False; exclude entire component from all splits",
+    "corruption_mapping": {
+      "ç": "c",
+      "ğ": "g",
+      "ı": "i",
+      "ö": "o",
+      "ş": "s",
+      "ü": "u",
+      "Ç": "C",
+      "Ğ": "G",
+      "İ": "I",
+      "Ö": "O",
+      "Ş": "S",
+      "Ü": "U"
+    },
+    "partial_probability": 0.5,
+    "partial_sampling": "reject empty/full masks",
+    "mixture": "60/25/15 exact; maximum feasible multiple of 20 per split; one variant per source",
+    "preservation": "up to half preservation quota from zero-corruptible sources; at least one of each subtype"
+  },
+  "original_sources": 9761,
+  "clean_sources": 9184,
+  "exclusions": {
+    "quality_filter": 534,
+    "protected_overlap": 15,
+    "duplicate": 28
+  },
+  "splits": {
+    "train": {
+      "sources": 7347,
+      "examples": 7340,
+      "unused_sources": 7,
+      "variants": {
+        "tam": 4404,
+        "kismi": 1835,
+        "koruma": 1101
+      },
+      "preservation_subtypes": {
+        "turkce_karakter_gerektirmeyen": 242,
+        "turkce_karakterli": 859
+      }
+    },
+    "validation": {
+      "sources": 919,
+      "examples": 900,
+      "unused_sources": 19,
+      "variants": {
+        "kismi": 225,
+        "tam": 540,
+        "koruma": 135
+      },
+      "preservation_subtypes": {
+        "turkce_karakterli": 105,
+        "turkce_karakter_gerektirmeyen": 30
+      }
+    },
+    "test": {
+      "sources": 918,
+      "examples": 900,
+      "unused_sources": 18,
+      "variants": {
+        "tam": 540,
+        "koruma": 135,
+        "kismi": 225
+      },
+      "preservation_subtypes": {
+        "turkce_karakterli": 105,
+        "turkce_karakter_gerektirmeyen": 30
+      }
+    }
+  },
+  "audit": {
+    "passed": true,
+    "unique_sources": 9140,
+    "near_duplicate_pairs": 0
+  },
+  "files": {
+    "LICENSE.txt": "899b1804a12ebc090b96339614eede1b64b686721b650a71430b55b5235f7f79",
+    "SOURCE_README.md": "5046f1a7b2d338fc87e1343bda6f08a19e2e0b0c64f7a84bc0f738c43d6f89f9",
+    "excluded.jsonl": "3a7afa7aeaa439d17cd043c1a9de483183c5b701acff38002e930ac9447bacf4",
+    "sources.jsonl": "a37142d3669d5d97689c5299569d153d14e6d712f080d42a5eebdc6504bc3183",
+    "test.jsonl": "6d88b80ca8d9610154a8b02c85092d8c0d0ba6cf29b0b08fde6527f368a16447",
+    "train.jsonl": "48cd9494bd76b6a6fbaabdeac88ace006094662115e53cc9f48e8debc7da3b56",
+    "validation.jsonl": "156ac8ac05691d0ec668ad43e54b3918ead51520f73fa187cc64d212a06660cd"
+  }
+}

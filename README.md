@@ -40,7 +40,7 @@ Model farkları için eşleştirilmiş bootstrap güven aralıkları hesaplanır
 
 - [Ayrıntılı ölçüm planı ve pilot veri kararları](<docs/plans/Deasciification Projesi Ölçüm Planı ve Pilot Veri.md>) deney kurallarının ana kaynağıdır.
 - [Pilot veri](data/pilot.jsonl) 34 kayıt içerir; üç `zaten_dogru` örneği ve dört minimal çift için `pair_id` / `focus_word_index` etiketleri eklendi.
-- Pilot ölçüm kodu ve hata analizi hazır; 13 otomatik kontrol geçti. Qwen3-1.7B modelinin sıfır örnekli tüm pilot değerlendirmesi tamamlandı. Büyük veri üretimi ve SFT eğitimi henüz tamamlanmadı.
+- Pilot ölçüm kodu ve hata analizi hazır; 13 otomatik kontrol geçti. Qwen3-1.7B modelinin sıfır örnekli tüm pilot değerlendirmesi tamamlandı. BOUN v1 veri hazırlama hattı ve ilk eğitim/doğrulama/test dosyaları hazır; SFT eğitimi henüz yapılmadı.
 
 Bu README deney tasarımını özetler; eğitim tamamlandığı veya başarı elde edildiği iddiası içermez. Yalnızca ana model eğitilirse koruma örneklerinin katkısı ayrı olarak kanıtlanmış sayılmaz.
 
@@ -150,3 +150,69 @@ Yeniden çalıştırma (mevcut sonuçları korumak için yeni çıktı adı kull
 `scripts/run_pilot.py` yalnızca yönerge ve girdiyi modele iletir; hedefler ve değerlendirme
 etiketleri isteme eklenmez. Model revision'ı, yönerge, paket sürümleri, veri özeti,
 ham cevaplar ve üretilen token kimlikleri kaydedilir. Mevcut çıktıların üzerine yazılmaz.
+
+## Eğitim verisi: BOUN v1
+
+[Veri hazırlama kuralları ve komutları](docs/data/README.md) ile ilk veri sürümü hazır.
+Kaynak UD Turkish BOUN r2.16; kaynak sürümü ve dosya özetleri
+[configs/data-source.json](configs/data-source.json) içinde sabitlendi.
+Kaynak/türetilmiş veri CC BY-SA 4.0 lisanslıdır; yazılımın Apache lisansından ayrıdır.
+
+### Veriyi nereden, kaç tane ve nasıl aldık?
+
+Veri, [Universal Dependencies / UD Turkish BOUN GitHub deposundan](https://github.com/UniversalDependencies/UD_Turkish-BOUN/tree/cfa62ac55a426d596700eceac436944e5cf0a967)
+alındı. BOUN, Boğaziçi Üniversitesi TABILAB tarafından Türkçe Ulusal Derlemi
+(TNC) metinlerinden hazırlanmış bir derlemdir. Bu projede TNC sitesi taranmadı;
+BOUN deposundaki hazır CoNLL-U dosyaları indirildi.
+
+| İndirilen özgün dosya | Kaynak cümle sayısı |
+| --- | ---: |
+| `tr_boun-ud-train.conllu` | 7.803 |
+| `tr_boun-ud-dev.conllu` | 979 |
+| `tr_boun-ud-test.conllu` | 979 |
+| **Toplam** | **9.761** |
+
+Sayılar indirilen dosyalardaki `# sent_id` kayıtlarından doğrulandı.
+Üç veri dosyasının tamamı ve kaynak `README.md` / `LICENSE.txt` dosyaları,
+`r2.16` sürümünün `cfa62ac55a426d596700eceac436944e5cf0a967` commit'ine
+sabitlenmiş ham GitHub adreslerinden HTTPS ile alındı; rastgele bir internet
+örneklemesi yapılmadı. İlk indirmede yerel DNS sorunu nedeniyle `curl` ile
+adres çözümlemesi belirtildi; TLS doğrulaması açık kaldı. İndirilen veri dosyaları
+GitHub'daki sabit Git blob kimlikleriyle de karşılaştırıldı.
+
+Tekrar indirme için `python3 -m scripts.download_data` kullanılır. Bu betik
+Python standart kütüphanesiyle dosyaları `data/raw/boun/` klasörüne indirir ve
+`configs/data-source.json` içindeki SHA-256 özetleriyle doğrular; mevcut önbellek
+varsa yalnızca doğrular. Hazırlama betiği her kaydın `# text` alanını hedef cümle,
+`# sent_id` alanını kaynak kimliği olarak okur. Ayrıştırma etiketleri modele
+verilmez, sözcükler yeniden birleştirilmez.
+
+Özgün train/dev/test dosyaları birleştirildi; tekrar ve pilot örtüşmesi
+ayıklamasından sonra bu proje için kaynak cümle bazında yeniden bölündü.
+Dolayısıyla aşağıdaki bölüm sayıları özgün BOUN bölüm sayılarından farklıdır.
+
+### Hazırlanan görev verisi
+
+| Bölüm | Tam ASCII | Kısmi ASCII | Koruma | Toplam |
+| --- | ---: | ---: | ---: | ---: |
+| Eğitim | 4.404 | 1.835 | 1.101 | 7.340 |
+| Doğrulama | 540 | 225 | 135 | 900 |
+| Test | 540 | 225 | 135 | 900 |
+
+9.761 kaynak cümlenin 534'ü kalite filtresi, 28'i tekrar, 15'i pilot örtüşmesi
+nedeniyle dışlandı. Kalan 9.184 kaynak cümle önce %80/%10/%10 bölündü; sonra
+her bölümde tam %60/%25/%15 karışım üretildi. Kota için 44 kaynak kullanılmadı.
+Her bölümde iki koruma alt türü de var. Kaynak ve pilot ayrılığı tanımlanan
+benzerlik kuralları altında denetlenir; belge/semantik bağımsızlık iddiası yoktur.
+
+```bash
+python3 -m scripts.download_data
+python3 -m scripts.prepare_data --output data/prepared/boun-v1
+python3 -m scripts.audit_data data/prepared/boun-v1
+```
+
+Mevcut çıktı klasörüne yeniden yazılmaz; tekrar üretim için yeni ad kullanın.
+[Üretim raporu](data/prepared/boun-v1/manifest.json), kaynak atamaları ve dışlama
+kayıtları verinin yanında tutulur. Veri hazırlama için yedi yeni testle toplam
+20 otomatik kontrol vardır. Sıradaki aşama eğitim örneklerinin içerik kontrolü,
+birkaç örnekli istem karşılaştırması ve küçük SFT denemesidir.

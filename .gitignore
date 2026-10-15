@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Downloaded corpus cache (pinned checksums in configs/data-source.json)
+data/raw/

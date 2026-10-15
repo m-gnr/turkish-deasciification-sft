@@ -178,7 +178,7 @@ Sentetik bozma gerçek yazım alışkanlıklarını tam temsil etmez. Tek model 
 1. **Tamamlandı:** Pilota üç `zaten_dogru` örneği ve minimal çift etiketleri eklendi; hedefler dönüşüm kurallarına göre doğrulandı.
 2. **Tamamlandı:** `scripts/evaluate.py` ile metrikler ve hiç-değiştirme baseline'ı hesaplandı.
 3. **Tamamlandı:** Hata analizi, Unicode, biçim koruma, sıfır payda ve minimal çift hesaplamaları dahil 13 otomatik kontrol geçti (`tests/test_evaluate.py`).
-4. Tekrar/sızıntı kontrolü, kaynak bazlı ayrım ve yeniden üretilebilir veri üretimini tamamla.
+4. **Tamamlandı (BOUN v1):** Tekrar/pilot örtüşme kontrolü, kaynak cümle bazlı ayrım ve sabit tohumla veri üretimi. Ayrıntılar `docs/data/README.md`; 7.340 eğitim, 900 doğrulama, 900 test örneği. Yeni elle hazırlanmış testler eklendiğinde dışlama listesiyle yeniden üretim gerekir.
 5. Baseline'ları ve ana SFT modelini aynı sabit test düzeninde değerlendir.
 6. Bütçe varsa korumasız ablasyonu ve birden fazla eğitim tohumunu çalıştır.
 7. Eşleştirilmiş bootstrap fark aralıklarını, hata türlerini ve sınırlılıkları raporla.

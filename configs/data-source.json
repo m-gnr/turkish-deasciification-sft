@@ -1,0 +1,28 @@
+{
+  "name": "UD Turkish BOUN",
+  "revision": "cfa62ac55a426d596700eceac436944e5cf0a967",
+  "release": "r2.16",
+  "license": "CC-BY-SA-4.0",
+  "files": {
+    "README.md": {
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Turkish-BOUN/cfa62ac55a426d596700eceac436944e5cf0a967/README.md",
+      "sha256": "5046f1a7b2d338fc87e1343bda6f08a19e2e0b0c64f7a84bc0f738c43d6f89f9"
+    },
+    "LICENSE.txt": {
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Turkish-BOUN/cfa62ac55a426d596700eceac436944e5cf0a967/LICENSE.txt",
+      "sha256": "899b1804a12ebc090b96339614eede1b64b686721b650a71430b55b5235f7f79"
+    },
+    "tr_boun-ud-train.conllu": {
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Turkish-BOUN/cfa62ac55a426d596700eceac436944e5cf0a967/tr_boun-ud-train.conllu",
+      "sha256": "373fe39e3acdba3219521f54fa5ae768851fbb4bf9a31079ad1ca6590410650c"
+    },
+    "tr_boun-ud-dev.conllu": {
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Turkish-BOUN/cfa62ac55a426d596700eceac436944e5cf0a967/tr_boun-ud-dev.conllu",
+      "sha256": "f6d1ed6e3b57b4e658177eb16089e9fb616bc68fb110eb0894c2b409e41b5c76"
+    },
+    "tr_boun-ud-test.conllu": {
+      "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Turkish-BOUN/cfa62ac55a426d596700eceac436944e5cf0a967/tr_boun-ud-test.conllu",
+      "sha256": "4f74fc0f9efdd1285d781f3efd1e98cbf39cf4433df9eb4dc14162e8ed36773b"
+    }
+  }
+}
