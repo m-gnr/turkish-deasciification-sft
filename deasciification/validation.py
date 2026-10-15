@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Pilot/egitim verisi dogrulayici.
 Kullanim:
-  python validate_pilot.py data/pilot.jsonl
-  python validate_pilot.py data/pilot.jsonl --check "aday egitim cumlesi"
+  python -m scripts.validate_data data/pilot.jsonl
+  python -m scripts.validate_data data/pilot.jsonl --check "aday egitim cumlesi"
 """
-import json, re, sys, unicodedata
+import json, re, unicodedata
 from collections import Counter
 from difflib import SequenceMatcher
 
@@ -57,7 +57,7 @@ def focus(r):
     return wi[j], wt[j]
 
 
-def main(path, cand=None):
+def validate_data(path, cand=None):
     recs = [json.loads(l) for l in open(path, encoding='utf-8') if l.strip()]
     errs, cov, variants, cats = [], Counter(), Counter(), Counter()
     amb_n = amb_ok = 0
@@ -119,8 +119,3 @@ def main(path, cand=None):
         print('  icerme/yakin tekrar:', cont or 'yok')
         for s, i, t in hits:
             print(f'  {s:.2f} {i} {t}')
-
-
-if __name__ == '__main__':
-    c = sys.argv[sys.argv.index('--check') + 1] if '--check' in sys.argv else None
-    main(sys.argv[1], c)

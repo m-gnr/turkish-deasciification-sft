@@ -44,20 +44,59 @@ Model farkları için eşleştirilmiş bootstrap güven aralıkları hesaplanır
 
 Bu README deney tasarımını özetler; eğitim tamamlandığı veya başarı elde edildiği iddiası içermez. Yalnızca ana model eğitilirse koruma örneklerinin katkısı ayrı olarak kanıtlanmış sayılmaz.
 
+## Dosya yapısı ve komutlar
+
+```text
+deasciification/          Ortak Python kodu
+  config.py              Model adı, sabit sürüm ve yönerge
+  inference.py           Model yükleme ve cevap üretme
+  evaluation.py          Metrikler ve hata analizi
+  validation.py          Veri doğrulama kuralları
+scripts/                 Komut satırı girişleri
+  download_model.py      Model indirme
+  predict.py             Tek cümle denemesi
+  run_pilot.py           Pilot üzerinde toplu tahmin
+  evaluate.py            Tahminleri puanlama
+  validate_data.py       Veriyi kontrol etme
+data/                    Pilot veri
+docs/plans/              Deney tasarımı
+reports/single-example/  Tek cümle denemesi
+reports/pilot-base/      SFT öncesi modelin tahmin, ayar ve puanları
+reports/pilot-identity/  Hiç-değiştirme raporları (34 ve eski 33 örnek)
+tests/                   Otomatik kontroller
+```
+
+Komutları **proje kökünden**, `python -m scripts.<komut>` biçiminde çalıştırın.
+Model işlemleri için bağımlılıkların kurulu olduğu sanal ortamı kullanın:
+
+```bash
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m scripts.download_model
+.venv/bin/python -m scripts.predict "yarin ise gidecegim."
+```
+
+Tek cümle komutu `reports/single-example/ilk-deneme.json` dosyasını günceller.
+Pilot komutu mevcut sonuçların üzerine yazmaz; yeniden çalıştırırken yeni bir
+çıktı adı seçin. İndirme ve çalıştırma aynı sabit model sürümünü kullanır.
+
+Klasör düzenlemesinde eski raporların içerikleri korunmuştur. İçlerindeki kod
+SHA-256 özetleri özgün çalıştırmaya aittir. Yeni pilot çalıştırmaları komut
+betiğinin yanı sıra ortak model kodunun ve ayar dosyasının özetlerini de kaydeder.
+
 ## Pilot ölçümünü çalıştırma
 
 Ölçüm aracı yalnızca Python standart kütüphanesini kullanır:
 
 ```bash
-python3 validate_pilot.py data/pilot.jsonl
+python3 -m scripts.validate_data data/pilot.jsonl
 python3 -m unittest discover -s tests -v
-python3 evaluate.py --identity --report reports/pilot-identity.json
-python3 evaluate.py --predictions predictions.jsonl --report reports/pilot-model.json
+python3 -m scripts.evaluate --identity --report reports/pilot-identity/pilot-identity.json
+python3 -m scripts.evaluate --predictions predictions.jsonl --report reports/pilot-model/pilot-model.json
 ```
 
 Model tahminleri JSONL biçiminde `{"id":"p001","output":"ham model cevabı"}` kayıtlarıdır. Veriyle birebir aynı ID kümesi gerekir. Çıktılardaki boşluklar ve açıklamalar temizlenmeden kaydedilmelidir. `category`, `pair_id` ve sıfırdan başlayan `focus_word_index` değerlendirme etiketleridir; modele verilmez.
 
-[Hiç-değiştirme pilot raporu](reports/pilot-identity.json): cümle tam eşleşmesi 4/34 (%11,76), belirsiz harf doğruluğu 165/260 (%63,46), gerekli düzeltme 0/95, katı uyum 34/34 ve doğru kelimeleri koruma 68/68. Minimal çift başarısı 0/4. Bunlar pilot ölçüm sonuçlarıdır; base veya SFT model sonucu değildir.
+[Hiç-değiştirme pilot raporu](reports/pilot-identity/pilot-identity.json): cümle tam eşleşmesi 4/34 (%11,76), belirsiz harf doğruluğu 165/260 (%63,46), gerekli düzeltme 0/95, katı uyum 34/34 ve doğru kelimeleri koruma 68/68. Minimal çift başarısı 0/4. Bunlar pilot ölçüm sonuçlarıdır; base veya SFT model sonucu değildir.
 
 Rapor ham çıktıları, veri SHA-256 özetini, örnek/kategori düzeyinde metrikleri ve hata konumlarını içerir. Oranlar 0–1 aralığındadır; sıfır payda `null` (N/A) olarak verilir. Hata sayıları örtüşebilir. Bootstrap ve iki model arasında karşılaştırma bu ilk ölçüm aracında henüz uygulanmadı.
 
@@ -65,9 +104,9 @@ Her pilot kaydı `source_id` taşır. `p002/p028` ve `p017/p018/p031` ortak kayn
 
 Raporun `resampling_groups` alanı hem kaynak hem minimal çift bağlantılarının birleşiminden oluşur. Bootstrap henüz hesaplanmaz; alan gelecekte kullanılacak örnekleme birimlerini tanımlar. Kısmi bozma ölçümleri ayrıca 12 uygun konumun 4.094 farklı kısmi maskesiyle otomatik sınandı; bunlar eğitim veya pilot verisi değildir.
 
-Önceki 33 kayıtlık sürümün gerçek dosya üzerinde doğrulanan sonucu 165/256 (%64,45) idi; [eski rapor](reports/pilot-identity-33.json) veri özeti ve kayıtlarıyla saklanır. Yeni sonuçtaki fark eklenen test örneğinden kaynaklanır, model değişiminden değil.
+Önceki 33 kayıtlık sürümün gerçek dosya üzerinde doğrulanan sonucu 165/256 (%64,45) idi; [eski rapor](reports/pilot-identity/pilot-identity-33.json) veri özeti ve kayıtlarıyla saklanır. Yeni sonuçtaki fark eklenen test örneğinden kaynaklanır, model değişiminden değil.
 
-`validate_pilot.py`, sağlanan betiğin değiştirilmemiş kopyasıdır. Yakın kaynak uyarıları `source_id` atanmış olsa da gösterilir. Betik hata bulduğunda başarısız çıkış kodu üretmez; otomatik geçme/kalma kontrolü için yukarıdaki unittest komutu kullanılmalıdır.
+Sağlanan doğrulayıcının kuralları `deasciification/validation.py` içinde, komut arayüzü `scripts/validate_data.py` içindedir. Yakın kaynak uyarıları `source_id` atanmış olsa da gösterilir. Betik hata bulduğunda başarısız çıkış kodu üretmez; otomatik geçme/kalma kontrolü için yukarıdaki unittest komutu kullanılmalıdır.
 
 ## Eğitim öncesi model: ilk pilot sonucu
 
@@ -96,18 +135,18 @@ ikisini tam doğru yaptı. Henüz SFT sonucu veya istatistiksel üstünlük iddi
 - `her sabah ise gidiyor` → aynı metin: bağlamın gerektirdiği `işe` düzeltmesi yapılmadı.
 - `p029` ve `p030`: boşluk/sekme düzeni değişti; `p015`: kelime yapısı bozuldu.
 
-[Ham cevaplar](reports/pilot-base-predictions.jsonl),
-[çalıştırma ayarları](reports/pilot-base-predictions.metadata.json) ve
-[ayrıntılı puanlama](reports/pilot-base.json) saklanır. Hiçbir örnek 128 yeni token sınırına ulaşmadı.
+[Ham cevaplar](reports/pilot-base/pilot-base-predictions.jsonl),
+[çalıştırma ayarları](reports/pilot-base/pilot-base-predictions.metadata.json) ve
+[ayrıntılı puanlama](reports/pilot-base/pilot-base.json) saklanır. Hiçbir örnek 128 yeni token sınırına ulaşmadı.
 Bu küçük geliştirme pilotu, bağımsız nihai test değildir.
 
 Yeniden çalıştırma (mevcut sonuçları korumak için yeni çıktı adı kullanın):
 
 ```bash
-.venv/bin/python run_pilot.py --output reports/pilot-base-rerun.jsonl
-.venv/bin/python evaluate.py --predictions reports/pilot-base-rerun.jsonl --report reports/pilot-base-rerun.json
+.venv/bin/python -m scripts.run_pilot --output reports/pilot-base/pilot-base-rerun.jsonl
+.venv/bin/python -m scripts.evaluate --predictions reports/pilot-base/pilot-base-rerun.jsonl --report reports/pilot-base/pilot-base-rerun.json
 ```
 
-`run_pilot.py` yalnızca yönerge ve girdiyi modele iletir; hedefler ve değerlendirme
+`scripts/run_pilot.py` yalnızca yönerge ve girdiyi modele iletir; hedefler ve değerlendirme
 etiketleri isteme eklenmez. Model revision'ı, yönerge, paket sürümleri, veri özeti,
 ham cevaplar ve üretilen token kimlikleri kaydedilir. Mevcut çıktıların üzerine yazılmaz.

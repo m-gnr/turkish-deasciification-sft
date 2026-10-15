@@ -1,5 +1,5 @@
 import unittest
-from evaluate import aggregate, score
+from deasciification.evaluation import aggregate, score
 
 
 def example(source, target, output, **extra):
@@ -59,7 +59,7 @@ class EvaluationTests(unittest.TestCase):
 
     def test_pilot_targets_and_perfect_predictions(self):
         from pathlib import Path
-        from evaluate import read_jsonl
+        from deasciification.evaluation import read_jsonl
         rows = read_jsonl(Path('data/pilot.jsonl'))
         result = aggregate([score(r, r['target']) for r in rows])
         self.assertEqual(result['examples'], 34)
@@ -69,7 +69,7 @@ class EvaluationTests(unittest.TestCase):
         self.assertEqual(result['metrics']['minimal_pair_success']['total'], 4)
 
     def test_source_and_pair_groups_are_transitive(self):
-        from evaluate import resampling_groups
+        from deasciification.evaluation import resampling_groups
         rows = [dict(id='a', source_id='s', pair_id='p'),
                 dict(id='b', source_id='s'), dict(id='c', pair_id='p'),
                 dict(id='d', source_id='other')]
@@ -78,8 +78,8 @@ class EvaluationTests(unittest.TestCase):
     def test_raw_pilot_unicode_coverage_and_groups(self):
         from pathlib import Path
         import unicodedata
-        from evaluate import read_jsonl, resampling_groups
-        from validate_pilot import CORRUPT, derivable, focus
+        from deasciification.evaluation import read_jsonl, resampling_groups
+        from deasciification.validation import CORRUPT, derivable, focus
         rows = read_jsonl(Path('data/pilot.jsonl'))
         covered = set()
         pairs = {}
@@ -104,7 +104,7 @@ class EvaluationTests(unittest.TestCase):
     def test_all_nontrivial_partial_masks(self):
         # Test fixtures only, never training data. Exercise every mixed mask.
         from itertools import product
-        from validate_pilot import CORRUPT
+        from deasciification.validation import CORRUPT
         target = 'çğışöü ÇĞİŞÖÜ'
         positions = [i for i, c in enumerate(target) if c in CORRUPT]
         for mask in product((False, True), repeat=len(positions)):

@@ -163,7 +163,7 @@ Eklenen kayıtlar:
 
 Mevcut bağlam testindeki `yorgun ise dinlensin` gibi doğru belirsiz örnekler ayrıca koruma analizine katılır. Kategoriler ile analiz etiketleri farklı amaçlara hizmet edebilir.
 
-Pilotun amacı ölçüm kodunun ve görev kurallarının boşluklarını bulmaktır; nihai genelleme başarısını ölçmek değildir. Genişletilmiş 34 kayıt üzerinde `evaluate.py` ile hiç-değiştirme baseline'ı yeniden ölçüldü: aday harf doğruluğu 165/260 (%63,46), cümle tam eşleşmesi 4/34 (%11,76), gerekli düzeltme başarısı 0/95, katı uyum 34/34, doğru kelime koruma 68/68, minimal çift başarısı 0/4. Sonuçlar `reports/pilot-identity.json` içinde veri SHA-256 özetiyle kayıtlıdır; önceki 30 kayıtlık pilotla aynı veri sürümü değildir. Mümkünse 10 kayıt bağımsız bir kişi tarafından kontrol edilir.
+Pilotun amacı ölçüm kodunun ve görev kurallarının boşluklarını bulmaktır; nihai genelleme başarısını ölçmek değildir. Genişletilmiş 34 kayıt üzerinde `scripts/evaluate.py` ile hiç-değiştirme baseline'ı yeniden ölçüldü: aday harf doğruluğu 165/260 (%63,46), cümle tam eşleşmesi 4/34 (%11,76), gerekli düzeltme başarısı 0/95, katı uyum 34/34, doğru kelime koruma 68/68, minimal çift başarısı 0/4. Sonuçlar `reports/pilot-identity/pilot-identity.json` içinde veri SHA-256 özetiyle kayıtlıdır; önceki 30 kayıtlık pilotla aynı veri sürümü değildir. Mümkünse 10 kayıt bağımsız bir kişi tarafından kontrol edilir.
 
 Ölçüm kodu; doğru çıktı, eksik/gereksiz düzeltme, mevcut Türkçe harfin bozulması, uzunluk değişimi, açıklama ekleme, `I/İ`, Unicode ve sıfır payda durumlarıyla doğrulanır.
 
@@ -176,7 +176,7 @@ Sentetik bozma gerçek yazım alışkanlıklarını tam temsil etmez. Tek model 
 ## Uygulama sırası
 
 1. **Tamamlandı:** Pilota üç `zaten_dogru` örneği ve minimal çift etiketleri eklendi; hedefler dönüşüm kurallarına göre doğrulandı.
-2. **Tamamlandı:** `evaluate.py` ile metrikler ve hiç-değiştirme baseline'ı hesaplandı.
+2. **Tamamlandı:** `scripts/evaluate.py` ile metrikler ve hiç-değiştirme baseline'ı hesaplandı.
 3. **Tamamlandı:** Hata analizi, Unicode, biçim koruma, sıfır payda ve minimal çift hesaplamaları dahil 13 otomatik kontrol geçti (`tests/test_evaluate.py`).
 4. Tekrar/sızıntı kontrolü, kaynak bazlı ayrım ve yeniden üretilebilir veri üretimini tamamla.
 5. Baseline'ları ve ana SFT modelini aynı sabit test düzeninde değerlendir.
@@ -185,7 +185,7 @@ Sentetik bozma gerçek yazım alışkanlıklarını tam temsil etmez. Tek model 
 
 ## Pilot doğrulama güncellemesi
 
-Sağlanan `validate_pilot.py` betiği önce gerçek 33 kayıtlık dosyada çalıştırıldı: NFC ve U+0307 hatası yoktu; 165/256 sonucu doğrulandı. Bu sürümün raporu `reports/pilot-identity-33.json` içinde saklandı. Ardından şu değişiklikler yapıldı:
+Sağlanan `validate_pilot.py` betiği önce gerçek 33 kayıtlık dosyada çalıştırıldı: NFC ve U+0307 hatası yoktu; 165/256 sonucu doğrulandı. Bu sürümün raporu `reports/pilot-identity/pilot-identity-33.json` içinde saklandı. Ardından şu değişiklikler yapıldı:
 
 - Tüm kayıtlara `source_id` eklendi. `p002/p028` aynı kimliği, `p017/p018/p031` başka bir ortak kimliği paylaşır. `p017` daha kısa bir ifade olduğundan ikinci grup kesin kaynak eşitliği iddiası değil, ortak parça nedeniyle korumacı gruplamadır.
 - `p034`: `OGRETMEN SEHIRDE` → `ÖĞRETMEN ŞEHİRDE` eklendi. On iki Türkçe harfin tamamı artık gerekli düzeltme kapsamında bulunur.
@@ -197,7 +197,7 @@ Sağlanan `validate_pilot.py` betiği önce gerçek 33 kayıtlık dosyada çalı
 ## SFT öncesi pilot çalıştırması
 
 Qwen3-1.7B revision `70d244cc86ccca08cf5af4e1e306ecf908b1ad5e` ile 34 girdinin
-sıfır örnekli değerlendirmesi tamamlandı. Mevcut `deneme.py` yönergesi, greedy üretim,
+sıfır örnekli değerlendirmesi tamamlandı. Mevcut `deasciification/config.py` yönergesi, greedy üretim,
 `enable_thinking=False`, 128 yeni token sınırı ve yerel MPS/float16 kullanıldı.
 Ham çıktılara temizlik uygulanmadı; hedefler modele gösterilmedi.
 
@@ -205,6 +205,6 @@ Cümle tam eşleşmesi 6/34, katı uyum 31/34, gerekli düzeltme 8/95,
 doğru kelime koruma 56/68 ve minimal çift başarısı 0/4 bulundu.
 Uyumsuz cevapların ilgili birimleri ana metriklerde başarısız sayılır.
 Üç kural ihlali p015, p029 ve p030 kayıtlarındadır; hiçbir çıktı token sınırına ulaşmadı.
-Ham cevaplar ve üretim metadatası `reports/pilot-base-predictions.*`, puanlama
-`reports/pilot-base.json` içinde saklanır. 13 mevcut otomatik kontrol geçti.
+Ham cevaplar ve üretim metadatası `reports/pilot-base/pilot-base-predictions.*`, puanlama
+`reports/pilot-base/pilot-base.json` içinde saklanır. 13 mevcut otomatik kontrol geçti.
 Bu sonuç geliştirme pilotuna aittir; SFT henüz yapılmadı ve bağımsız nihai test sonucu değildir.
