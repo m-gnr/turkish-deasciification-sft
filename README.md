@@ -1,129 +1,70 @@
 # turkish-deasciification-sft
-Evaluating supervised fine-tuning for Turkish diacritic restoration, with a focus on contextual accuracy and instruction adherence.
 
-# Deasciification Projesi: Ölçüm Planı ve Pilot Veri
-
-Doğal Dil İşlemeye Giriş dersi projesi için düzeltilmiş ölçüm planı: ASCII ile yazılmış Türkçe metni doğru Türkçe karakterlerle geri yazma görevi, yönergeyle ince ayar (SFT) ile.
+Türkçe karakter geri yükleme için yönergeyle ince ayarın (SFT) bağlamsal doğruluğa, doğru metni korumaya ve yönerge uyumuna etkisini inceleyen Doğal Dil İşlemeye Giriş dersi projesi.
 
 ## Araştırma sorusu
 
-Yönergeyle ince ayar, küçük bir dil modelinin ASCII ile yazılmış Türkçe metni doğru Türkçe karakterlerle geri yazma başarısını ve "sadece harfleri düzelt, başka bir şey değiştirme" yönergesine uyumunu artırıyor mu?
+SFT, küçük bir dil modelinin Türkçe karakterleri bağlama uygun biçimde geri getirmesini ve metnin geri kalanını korumasını ne kadar iyileştiriyor?
 
-İki ayrı şey ölçülür: doğruluk (doğru harfi seçti mi?) ve yönerge uyumu (yalnızca istenen işi yaptı mı?).
+```text
+her sabah ise gidiyor → her sabah işe gidiyor
+yorgun ise dinlensin → yorgun ise dinlensin
+yarin gelicem → yarın gelicem
+```
 
-## Önceki taslağa yapılan düzeltmeler
+Görev yalnızca izin verilen ASCII → Türkçe harf dönüşümleridir. Mevcut Türkçe karakterler, büyük/küçük harf düzeni, boşluk, noktalama, yazım hataları ve kısaltmalar korunur; açıklama eklenmez. Çift yönlü düzeltme ve genel yazım düzeltme kapsam dışındadır.
 
-1. **Koşullu doğruluk çarpıtabilir.** Yalnızca uyumlu çıktılarda doğruluk hesaplamak yanıltıcıdır. Kurala az örnekte uyup hepsini doğru yapan model, çoğunda uyup birkaç hata yapan modelden iyi görünebilir. Bu yüzden tüm örnekler üzerinden hesaplanan metrikler ana metrik olur; koşullu doğruluk yanında n sayısıyla ikincil olarak verilir.
-2. **Gerçekçi test görevin sınırını değiştirmemeli.** Girdide yazım hatası ve kısaltma bulunabilir, ancak hedef çıktıda düzeltilmez (`yarin gelicem` → `yarın gelicem`). Kendi yazdığımız cümleler "elle hazırlanmış günlük dil testi" olarak adlandırılır; gerçek kullanıcı verisi gibi sunulmaz.
-3. **Bütünlük kontrolü kesin tanımlanmalı.** Yalnızca sadeleştirip karşılaştırmak, mevcut bir `ş` harfinin `s` yapılmasını yakalamaz. Konum bazlı kontrol kullanılır. Ham çıktı her zaman saklanır; baştaki ve sondaki boşluk temizleme yalnızca ikincil "yumuşak uyum" ölçüsünde kullanılır.
-4. **Frekans baseline'ı tek başına bağlam kullanımını kanıtlamaz.** Bağlam etkisi, aynı belirsiz kelimenin farklı cevap gerektirdiği minimal çiftlerle sınanır. Frekans sözlüğü yalnızca eğitim bölümünden oluşturulur.
-5. **Tahmini başarı yüzdeleri bulgu değildir.** Önceki taslaktaki oranlar hipotezdir. "Daha itaatkâr" gibi yorumlar ancak sonuçlar destekliyorsa yazılır.
-6. **Belirsiz örneklerde tek doğru cevap varsayımı sorunlu.** Gerçekten iki okumaya açık örnekler ana testte kullanılmaz; ayrı küçük bir kümeye alınır ve birden fazla kabul edilen cevap tanımlanır. "Tavan %100'dür" ifadesi yanlıştı: bu kümede tavan zaten %100'ün altındadır.
+## Deney tasarımı
 
-Ek iki not:
+Ana SFT modelinin eğitim karışımı örnek sayısı üzerinden %60 tam ASCII, %25 kısmi ASCII ve %15 değişiklik gerektirmeyen metindir. Bu oranlar başlangıç tasarım tercihidir. Koruma örnekleri hem doğru Türkçe karakter içeren hem de Türkçe karakter gerektirmeyen metinleri kapsar.
 
-- **Veri sızıntısı:** Temel model Vikipedi ve haber metinleriyle ön eğitim görmüş olabilir; test cümlelerini ezbere bilebilir. Test için yeni veya elle yazılmış cümleler kullanmak riski azaltır.
-- **Bağlam baseline'ı:** Frekans sözlüğünün yanında önceki kelimeye bakan basit bir bigram baseline'ı da konur.
+Kısmi bozma, uygun Türkçe harf konumlarında bağımsız %50 olasılıkla uygulanır; en az bir konum bozulmalı ve en az biri korunmalıdır. Tekrarlar/yakın tekrarlar ele alınır, pilot ve elle hazırlanmış testler eğitimden dışlanır, kaynak cümleler **önce ayrılır, sonra bozulur**.
 
-## Düzeltilmiş ölçüm planı
+Karşılaştırmalar:
 
-| Metrik | Nasıl hesaplanır |
-| --- | --- |
-| Uyum oranı (katı) | Ham çıktı üzerinde, tüm örnekler paydada |
-| Cümle tam eşleşmesi | Tüm testte; uyumsuz çıktı yanlış sayılır |
-| Belirsiz harf doğruluğu (tüm örnekler) | Uyumsuz çıktılar yanlış sayılır |
-| Belirsiz harf doğruluğu (yalnız uyumlular) | Yanında n sayısı yazılır |
-| Belirsiz kelime ve minimal çift doğruluğu | Ayrı raporlanır |
+- Girdiyi hiç değiştirmeyen baseline.
+- Temel model: sıfır örnekli ve 3–5 örnekli istem.
+- Tam veri karışımıyla ana SFT modeli.
+- Eğitim verisinden oluşturulan frekans ve bigram baseline'ları.
+- Bütçe yeterse koruma örnekleri çıkarılmış SFT ablasyonu; toplam eğitim token bütçesi eşitlenerek.
 
-Ana metrikler ilk ikisidir. Belirsiz harfler `c, g, i, o, s, u` ve büyük karşılıklarıdır.
+## Değerlendirme
 
-## Karşılaştırılacak koşullar
+Ana metrikler **katı yönerge uyumu** ve **cümle tam eşleşmesi**dir. Gerekli düzeltme başarısı, doğru harf/kelime koruma oranı, belirsiz kelime doğruluğu ve minimal çift başarısı ayrıca raporlanır. Uyumsuz çıktılar ana metriklerde başarısız sayılır.
 
-| Koşul | Açıklama |
-| --- | --- |
-| Temel model, sıfır örnekli | Yalnızca yönerge |
-| Temel model, birkaç örnekli | Yönerge + 3-5 örnek |
-| İnce ayarlı model | SFT sonrası, sıfır örnekli |
-| Frekans baseline'ı | Eğitim bölümünden çıkarılan sözlük, en olası karşılık |
-| Bigram baseline'ı | Önceki kelimeye bakan basit bağlam modeli |
+Hata analizi kural ihlali, eksik düzeltme, gereksiz düzeltme ve kelime düzeyinde yanlış düzeltmeyi kapsar. Son başlık diğerleriyle örtüşebilir; dört başlık ayrık sınıflar olarak toplanmaz.
 
-## Test kümeleri
+Model farkları için eşleştirilmiş bootstrap güven aralıkları hesaplanır; minimal çiftler ve aynı kaynağın varyantları birlikte örneklenir. Bu aralıklar eğitim tohumları arasındaki değişkenliği kapsamaz.
 
-1. **Sentetik test:** Derlemden ayrılmış, programla ASCII'ye çevrilmiş cümleler.
-2. **Belirsizlik ve minimal çift testi:** Her cümlede bağlama bağlı belirsiz kelime geçer.
-3. **Elle hazırlanmış günlük dil testi:** Günlük dil, kısaltma ve yazım hatası içerir; hedefte bunlar korunur.
-4. **Gerçekten belirsiz küçük küme:** Birden fazla kabul edilen cevapla ayrı raporlanır.
+## Plan ve mevcut durum
 
-Eğitim ve test cümleleri kesinlikle ayrı olmalıdır; test kümesine eğitim sırasında dokunulmaz.
+- [Ayrıntılı ölçüm planı ve pilot veri kararları](<docs/plans/Deasciification Projesi Ölçüm Planı ve Pilot Veri.md>) deney kurallarının ana kaynağıdır.
+- [Pilot veri](data/pilot.jsonl) 34 kayıt içerir; üç `zaten_dogru` örneği ve dört minimal çift için `pair_id` / `focus_word_index` etiketleri eklendi.
+- Pilot ölçüm kodu ve hata analizi hazır; 13 otomatik kontrol geçti. Büyük veri üretimi, base modelin tüm pilot üzerindeki değerlendirmesi ve SFT eğitimi henüz tamamlanmadı.
 
-## Dönüşüm kuralları
+Bu README deney tasarımını özetler; eğitim tamamlandığı veya başarı elde edildiği iddiası içermez. Yalnızca ana model eğitilirse koruma örneklerinin katkısı ayrı olarak kanıtlanmış sayılmaz.
 
-Uyum kontrolü, sadeleştirip karşılaştırmak yerine konum bazlıdır. Her konumda çıktı harfi, girdi harfinin izin verilen karşılıklarından biri olmalıdır:
+## Pilot ölçümünü çalıştırma
 
-| Girdi | Çıktıda olabilir |
-| --- | --- |
-| c / C | c, ç / C, Ç |
-| g / G | g, ğ / G, Ğ |
-| i | i, ı |
-| I | I, İ |
-| o / O | o, ö / O, Ö |
-| s / S | s, ş / S, Ş |
-| u / U | u, ü / U, Ü |
-| Diğer her karakter (girdideki Türkçe harfler, rakam, noktalama, boşluk dahil) | Aynen aynı |
+Ölçüm aracı yalnızca Python standart kütüphanesini kullanır:
 
-Ek kurallar:
+```bash
+python3 validate_pilot.py data/pilot.jsonl
+python3 -m unittest discover -s tests -v
+python3 evaluate.py --identity --report reports/pilot-identity.json
+python3 evaluate.py --predictions predictions.jsonl --report reports/pilot-model.json
+```
 
-- Çıktı uzunluğu girdiyle aynı olmalıdır (NFC normalizasyonundan sonra).
-- Büyük/küçük harf dönüşümünde Python'un `.lower()` ve `.upper()` fonksiyonları `I/İ` ve `ı/i` yüzünden hata verir; açık bir eşleme tablosu kullanılır.
-- Bu kural `ş→s` gibi bozulmaları yakalar. `Google` içindeki `o` → `ö` ise uyum kontrolünden geçer ama doğruluk kontrolünde yanlış sayılır. Uyum ve doğruluk ayrı çalışır.
-- Hedef çıktıda yazım hatası ve kısaltmalar düzeltilmez (`gelicem` aynen kalır).
+Model tahminleri JSONL biçiminde `{"id":"p001","output":"ham model cevabı"}` kayıtlarıdır. Veriyle birebir aynı ID kümesi gerekir. Çıktılardaki boşluklar ve açıklamalar temizlenmeden kaydedilmelidir. `category`, `pair_id` ve sıfırdan başlayan `focus_word_index` değerlendirme etiketleridir; modele verilmez.
 
-## Belirsizlik
+[Hiç-değiştirme pilot raporu](reports/pilot-identity.json): cümle tam eşleşmesi 4/34 (%11,76), belirsiz harf doğruluğu 165/260 (%63,46), gerekli düzeltme 0/95, katı uyum 34/34 ve doğru kelimeleri koruma 68/68. Minimal çift başarısı 0/4. Bunlar pilot ölçüm sonuçlarıdır; base veya SFT model sonucu değildir.
 
-Gerçekten iki okumaya açık örnekler ana testte kullanılmaz. Bunlar ayrı bir küçük kümeye alınır ve birden fazla kabul edilen cevap tanımlanır.
+Rapor ham çıktıları, veri SHA-256 özetini, örnek/kategori düzeyinde metrikleri ve hata konumlarını içerir. Oranlar 0–1 aralığındadır; sıfır payda `null` (N/A) olarak verilir. Hata sayıları örtüşebilir. Bootstrap ve iki model arasında karşılaştırma bu ilk ölçüm aracında henüz uygulanmadı.
 
-## 20-30 örneklik pilot
+Her pilot kaydı `source_id` taşır. `p002/p028` ve `p017/p018/p031` ortak kaynak gruplarıdır; ikinci grup ortak metin parçası nedeniyle korumacı biçimde birleştirilmiştir. `p034`, `Ğ/Ö/Ş` büyük harf düzeltmelerini kapsar. Türetilen dağılım 26 tam, 4 kısmi ve 4 korumadır; pilot eğitim karışımı oranlarını temsil etmez.
 
-Amaç model ölçmek değil, kuralların ve ölçümün boşluklarını bulmaktır. Önerilen dağılım:
+Raporun `resampling_groups` alanı hem kaynak hem minimal çift bağlantılarının birleşiminden oluşur. Bootstrap henüz hesaplanmaz; alan gelecekte kullanılacak örnekleme birimlerini tanımlar. Kısmi bozma ölçümleri ayrıca 12 uygun konumun 4.094 farklı kısmi maskesiyle otomatik sınandı; bunlar eğitim veya pilot verisi değildir.
 
-| Kategori | Örnek sayısı |
-| --- | --- |
-| Bağlama bağlı belirsiz kelime ve minimal çiftler | \~8 |
-| Özel isim ve yabancı kelime (`Google`, `Ankara`, `mail`) | \~6 |
-| Kısmen Türkçe karakterli girdi | \~4 |
-| Yazım hatası ve kısaltma (korunacak) | \~4 |
-| Büyük harf, `I/İ` | \~4 |
-| Sayı, URL, emoji, noktalama | \~2 |
+Önceki 33 kayıtlık sürümün gerçek dosya üzerinde doğrulanan sonucu 165/256 (%64,45) idi; [eski rapor](reports/pilot-identity-33.json) veri özeti ve kayıtlarıyla saklanır. Yeni sonuçtaki fark eklenen test örneğinden kaynaklanır, model değişiminden değil.
 
-Örnekler:
-
-| Girdi | Beklenen |
-| --- | --- |
-| her sabah ise gidiyor | her sabah işe gidiyor |
-| yorgun ise dinlensin | yorgun ise dinlensin |
-| Isik yandi | Işık yandı |
-| yarin gelicem, mail attim | yarın gelicem, mail attım |
-| ögrenci kartini unutmusum | öğrenci kartını unutmuşum |
-
-Mümkünse 10 örnek başka birine bağımsız çevirtilir; anlaşmazlık çıkan yerler kural boşluğunu gösterir.
-
-## Hata analizi (raporun "ne gördük" kısmı)
-
-- En çok yanlış yapılan kelimeler hangileri?
-- Hangi harfte hata yoğun? (`i/ı`, `o/ö` ...)
-- Büyük harfli cümle başlarında `I/İ` sorunu
-- Özel isimler ve yabancı kelimelerde gereksiz aksan ekleme
-- Sentetik test ile elle hazırlanmış günlük dil testi arasındaki fark
-
-## Sınırlılıklar
-
-- Sentetik veri gerçek yazım alışkanlıklarını tam yansıtmaz.
-- Tek model ve tek eğitim çalıştırması rastgeleliğe duyarlıdır; zaman varsa 2-3 farklı seed ile tekrarlanır.
-- Tahmini sonuçlar hipotezdir; rapora yalnızca ölçülen bulgular yazılır.
-
-## Sonraki adımlar
-
-1. Kesin dönüşüm kurallarını sabitle.
-2. 20-30 örneklik pilot veri setini hazırla.
-3. Konum bazlı uyum kontrolü ve metrik betiğini yaz.
-4. Pilot sonuçlarına göre kuralları güncelle, ardından büyük veri üretimine geç.
+`validate_pilot.py`, sağlanan betiğin değiştirilmemiş kopyasıdır. Yakın kaynak uyarıları `source_id` atanmış olsa da gösterilir. Betik hata bulduğunda başarısız çıkış kodu üretmez; otomatik geçme/kalma kontrolü için yukarıdaki unittest komutu kullanılmalıdır.

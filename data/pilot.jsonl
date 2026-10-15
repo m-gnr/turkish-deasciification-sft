@@ -1,0 +1,34 @@
+{"id": "p001", "category": "temel", "input": "bugun hava cok guzel.", "target": "bugün hava çok güzel.", "source_id": "pilot_src_001"}
+{"id": "p002", "category": "temel", "input": "cocuk sut icti.", "target": "çocuk süt içti.", "source_id": "pilot_src_002"}
+{"id": "p003", "category": "temel", "input": "aksam yagmur basladi.", "target": "akşam yağmur başladı.", "source_id": "pilot_src_003"}
+{"id": "p004", "category": "baglam", "input": "her sabah ise gidiyor", "target": "her sabah işe gidiyor", "pair_id": "ise_01", "focus_word_index": 2, "source_id": "pilot_src_004"}
+{"id": "p005", "category": "baglam", "input": "yorgun ise dinlensin", "target": "yorgun ise dinlensin", "pair_id": "ise_01", "focus_word_index": 1, "source_id": "pilot_src_005"}
+{"id": "p006", "category": "baglam", "input": "forvet son dakikada gol atti.", "target": "forvet son dakikada gol attı.", "pair_id": "gol_01", "focus_word_index": 3, "source_id": "pilot_src_006"}
+{"id": "p007", "category": "baglam", "input": "bu gol kis aylarinda tamamen donuyor.", "target": "bu göl kış aylarında tamamen donuyor.", "pair_id": "gol_01", "focus_word_index": 1, "source_id": "pilot_src_007"}
+{"id": "p008", "category": "baglam", "input": "bu otobus duraga cok sik geliyor.", "target": "bu otobüs durağa çok sık geliyor.", "pair_id": "sik_01", "focus_word_index": 4, "source_id": "pilot_src_008"}
+{"id": "p009", "category": "baglam", "input": "dugunde cok sik bir elbise giydi.", "target": "düğünde çok şık bir elbise giydi.", "pair_id": "sik_01", "focus_word_index": 2, "source_id": "pilot_src_009"}
+{"id": "p010", "category": "baglam", "input": "bu kalemin ucu kirildi.", "target": "bu kalemin ucu kırıldı.", "pair_id": "ucu_01", "focus_word_index": 2, "source_id": "pilot_src_010"}
+{"id": "p011", "category": "baglam", "input": "bes yarismacinin ucu finale kaldi.", "target": "beş yarışmacının üçü finale kaldı.", "pair_id": "ucu_01", "focus_word_index": 2, "source_id": "pilot_src_011"}
+{"id": "p012", "category": "ozel_isim_yabanci", "input": "Google uzerinden arama yaptim.", "target": "Google üzerinden arama yaptım.", "source_id": "pilot_src_012"}
+{"id": "p013", "category": "ozel_isim_yabanci", "input": "Ankara'ya yarin gidiyorum.", "target": "Ankara'ya yarın gidiyorum.", "source_id": "pilot_src_013"}
+{"id": "p014", "category": "ozel_isim_yabanci", "input": "toplantidan sonra mail attim.", "target": "toplantıdan sonra mail attım.", "source_id": "pilot_src_014"}
+{"id": "p015", "category": "ozel_isim_yabanci", "input": "Zoom toplantisi uc saat surdu.", "target": "Zoom toplantısı üç saat sürdü.", "source_id": "pilot_src_015"}
+{"id": "p016", "category": "ozel_isim_yabanci", "input": "Python kodunu bugun calistirdim.", "target": "Python kodunu bugün çalıştırdım.", "source_id": "pilot_src_016"}
+{"id": "p017", "category": "kismen_turkce", "input": "ögrenci kartı", "target": "öğrenci kartı", "source_id": "pilot_src_017"}
+{"id": "p018", "category": "kismen_turkce", "input": "ögrenci kartini unutmusum", "target": "öğrenci kartını unutmuşum", "source_id": "pilot_src_017"}
+{"id": "p019", "category": "kismen_turkce", "input": "çocuklar bahçede oynuyor, kuslar ötüyor.", "target": "çocuklar bahçede oynuyor, kuşlar ötüyor.", "source_id": "pilot_src_019"}
+{"id": "p020", "category": "kismen_turkce", "input": "bugün gökyüzü cok acik.", "target": "bugün gökyüzü çok açık.", "source_id": "pilot_src_020"}
+{"id": "p021", "category": "yazim_hatasi_kisaltma", "input": "yarin gelicem", "target": "yarın gelicem", "source_id": "pilot_src_021"}
+{"id": "p022", "category": "yazim_hatasi_kisaltma", "input": "slm, bugun goruselim mi?", "target": "slm, bugün görüşelim mi?", "source_id": "pilot_src_022"}
+{"id": "p023", "category": "yazim_hatasi_kisaltma", "input": "nbr, aksam musait misin?", "target": "nbr, akşam müsait misin?", "source_id": "pilot_src_023"}
+{"id": "p024", "category": "yazim_hatasi_kisaltma", "input": "tmm, cikinca ararim", "target": "tmm, çıkınca ararım", "source_id": "pilot_src_024"}
+{"id": "p025", "category": "buyuk_harf", "input": "IZMIR", "target": "İZMİR", "source_id": "pilot_src_025"}
+{"id": "p026", "category": "buyuk_harf", "input": "Isik yandi", "target": "Işık yandı", "source_id": "pilot_src_026"}
+{"id": "p027", "category": "buyuk_harf", "input": "Istanbul'a gidiyoruz", "target": "İstanbul'a gidiyoruz", "source_id": "pilot_src_027"}
+{"id": "p028", "category": "buyuk_harf", "input": "COCUK SUT ICTI.", "target": "ÇOCUK SÜT İÇTİ.", "source_id": "pilot_src_002"}
+{"id": "p029", "category": "bicim_koruma", "input": "saat 15.00'te  www.ornek.com adresini ac :) 🌞", "target": "saat 15.00'te  www.ornek.com adresini aç :) 🌞", "source_id": "pilot_src_029"}
+{"id": "p030", "category": "bicim_koruma", "input": "  bugun\t3 kisi geldi!\nyarin  2 kisi gelecek.  ", "target": "  bugün\t3 kişi geldi!\nyarın  2 kişi gelecek.  ", "source_id": "pilot_src_030"}
+{"id": "p031", "category": "zaten_dogru", "subcategory": "turkce_karakterli", "input": "öğrenci kartını unutmuşum", "target": "öğrenci kartını unutmuşum", "source_id": "pilot_src_017"}
+{"id": "p032", "category": "zaten_dogru", "subcategory": "turkce_karakterli", "input": "Bugün öğle yemeği çok güzeldi.", "target": "Bugün öğle yemeği çok güzeldi.", "source_id": "pilot_src_032"}
+{"id": "p033", "category": "zaten_dogru", "subcategory": "turkce_karakter_gerektirmeyen", "input": "herkes evde beklesin", "target": "herkes evde beklesin", "source_id": "pilot_src_033"}
+{"id": "p034", "source_id": "pilot_src_034", "category": "buyuk_harf", "input": "OGRETMEN SEHIRDE", "target": "ÖĞRETMEN ŞEHİRDE"}

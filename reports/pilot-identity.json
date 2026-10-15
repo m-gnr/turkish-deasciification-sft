@@ -1,0 +1,3400 @@
+{
+  "mode": "identity",
+  "data": "data/pilot.jsonl",
+  "data_sha256": "620618ad745c34a430c17755b72dadf534d6517babf3e706a749b3c868ed880d",
+  "evaluator_sha256": "5f692eb70fa88bdd6a8adf88450cd9dc01b34410af82a106c0f99f9c59a162fd",
+  "resampling_groups": [
+    [
+      "p001"
+    ],
+    [
+      "p002",
+      "p028"
+    ],
+    [
+      "p003"
+    ],
+    [
+      "p004",
+      "p005"
+    ],
+    [
+      "p006",
+      "p007"
+    ],
+    [
+      "p008",
+      "p009"
+    ],
+    [
+      "p010",
+      "p011"
+    ],
+    [
+      "p012"
+    ],
+    [
+      "p013"
+    ],
+    [
+      "p014"
+    ],
+    [
+      "p015"
+    ],
+    [
+      "p016"
+    ],
+    [
+      "p017",
+      "p018",
+      "p031"
+    ],
+    [
+      "p019"
+    ],
+    [
+      "p020"
+    ],
+    [
+      "p021"
+    ],
+    [
+      "p022"
+    ],
+    [
+      "p023"
+    ],
+    [
+      "p024"
+    ],
+    [
+      "p025"
+    ],
+    [
+      "p026"
+    ],
+    [
+      "p027"
+    ],
+    [
+      "p029"
+    ],
+    [
+      "p030"
+    ],
+    [
+      "p032"
+    ],
+    [
+      "p033"
+    ],
+    [
+      "p034"
+    ]
+  ],
+  "normalization": "NFC only; raw outputs retained",
+  "summary": {
+    "examples": 34,
+    "metrics": {
+      "strict_compliance": {
+        "correct": 34,
+        "total": 34,
+        "rate": 1.0
+      },
+      "sentence_exact": {
+        "correct": 4,
+        "total": 34,
+        "rate": 0.11764705882352941
+      },
+      "candidate_accuracy": {
+        "correct": 165,
+        "total": 260,
+        "rate": 0.6346153846153846
+      },
+      "required_correction": {
+        "correct": 0,
+        "total": 95,
+        "rate": 0.0
+      },
+      "character_preservation": {
+        "correct": 752,
+        "total": 752,
+        "rate": 1.0
+      },
+      "candidate_preservation": {
+        "correct": 165,
+        "total": 165,
+        "rate": 1.0
+      },
+      "candidate_accuracy_compliant_only": {
+        "correct": 165,
+        "total": 260,
+        "rate": 0.6346153846153846
+      },
+      "word_preservation": {
+        "correct": 68,
+        "total": 68,
+        "rate": 1.0
+      },
+      "ambiguous_word_accuracy": {
+        "correct": 3,
+        "total": 8,
+        "rate": 0.375
+      },
+      "ambiguous_word_preservation": {
+        "correct": 3,
+        "total": 3,
+        "rate": 1.0
+      },
+      "minimal_pair_success": {
+        "correct": 0,
+        "total": 4,
+        "rate": 0.0
+      }
+    },
+    "errors": {
+      "rule_violation": 0,
+      "unalignable": 0,
+      "missing_correction": 95,
+      "unnecessary_correction": 0,
+      "wrongly_changed_word": 0
+    }
+  },
+  "by_category": {
+    "temel": {
+      "examples": 3,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 3,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 11,
+          "total": 21,
+          "rate": 0.5238095238095238
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 10,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 47,
+          "total": 47,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 11,
+          "total": 11,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 11,
+          "total": 21,
+          "rate": 0.5238095238095238
+        },
+        "word_preservation": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 10,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      }
+    },
+    "baglam": {
+      "examples": 8,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 8,
+          "total": 8,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 1,
+          "total": 8,
+          "rate": 0.125
+        },
+        "candidate_accuracy": {
+          "correct": 49,
+          "total": 77,
+          "rate": 0.6363636363636364
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 28,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 202,
+          "total": 202,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 49,
+          "total": 49,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 49,
+          "total": 77,
+          "rate": 0.6363636363636364
+        },
+        "word_preservation": {
+          "correct": 22,
+          "total": 22,
+          "rate": 1.0
+        },
+        "ambiguous_word_accuracy": {
+          "correct": 3,
+          "total": 8,
+          "rate": 0.375
+        },
+        "ambiguous_word_preservation": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 28,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      }
+    },
+    "ozel_isim_yabanci": {
+      "examples": 5,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 5,
+          "total": 5,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 5,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 26,
+          "total": 43,
+          "rate": 0.6046511627906976
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 17,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 130,
+          "total": 130,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 26,
+          "total": 26,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 26,
+          "total": 43,
+          "rate": 0.6046511627906976
+        },
+        "word_preservation": {
+          "correct": 10,
+          "total": 10,
+          "rate": 1.0
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 17,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      }
+    },
+    "kismen_turkce": {
+      "examples": 4,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 20,
+          "total": 29,
+          "rate": 0.6896551724137931
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 9,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 92,
+          "total": 92,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 20,
+          "total": 20,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 20,
+          "total": 29,
+          "rate": 0.6896551724137931
+        },
+        "word_preservation": {
+          "correct": 7,
+          "total": 7,
+          "rate": 1.0
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 9,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      }
+    },
+    "yazim_hatasi_kisaltma": {
+      "examples": 4,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 15,
+          "total": 26,
+          "rate": 0.5769230769230769
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 11,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 69,
+          "total": 69,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 15,
+          "total": 15,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 15,
+          "total": 26,
+          "rate": 0.5769230769230769
+        },
+        "word_preservation": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 11,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      }
+    },
+    "buyuk_harf": {
+      "examples": 5,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 5,
+          "total": 5,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 5,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 12,
+          "total": 27,
+          "rate": 0.4444444444444444
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 15,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 51,
+          "total": 51,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 12,
+          "total": 12,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 12,
+          "total": 27,
+          "rate": 0.4444444444444444
+        },
+        "word_preservation": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 15,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      }
+    },
+    "bicim_koruma": {
+      "examples": 2,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 2,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 17,
+          "total": 22,
+          "rate": 0.7727272727272727
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 5,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 86,
+          "total": 86,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 17,
+          "total": 17,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 17,
+          "total": 22,
+          "rate": 0.7727272727272727
+        },
+        "word_preservation": {
+          "correct": 10,
+          "total": 10,
+          "rate": 1.0
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 5,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      }
+    },
+    "zaten_dogru": {
+      "examples": 3,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "candidate_accuracy": {
+          "correct": 15,
+          "total": 15,
+          "rate": 1.0
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        },
+        "character_preservation": {
+          "correct": 75,
+          "total": 75,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 15,
+          "total": 15,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 15,
+          "total": 15,
+          "rate": 1.0
+        },
+        "word_preservation": {
+          "correct": 11,
+          "total": 11,
+          "rate": 1.0
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 0,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      }
+    }
+  },
+  "examples": [
+    {
+      "id": "p001",
+      "category": "temel",
+      "input": "bugun hava cok guzel.",
+      "target": "bugün hava çok güzel.",
+      "source_id": "pilot_src_001",
+      "output": "bugun hava cok guzel.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 4,
+          "total": 7,
+          "rate": 0.5714285714285714
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 3,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 18,
+          "total": 18,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 4,
+          "total": 7,
+          "rate": 0.5714285714285714
+        },
+        "word_preservation": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 3,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 3,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        },
+        {
+          "index": 11,
+          "input": "c",
+          "target": "ç",
+          "output": "c",
+          "type": "missing_correction"
+        },
+        {
+          "index": 16,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p002",
+      "category": "temel",
+      "input": "cocuk sut icti.",
+      "target": "çocuk süt içti.",
+      "source_id": "pilot_src_002",
+      "output": "cocuk sut icti.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 6,
+          "total": 9,
+          "rate": 0.6666666666666666
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 3,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 12,
+          "total": 12,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 6,
+          "total": 9,
+          "rate": 0.6666666666666666
+        },
+        "word_preservation": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 3,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 0,
+          "input": "c",
+          "target": "ç",
+          "output": "c",
+          "type": "missing_correction"
+        },
+        {
+          "index": 7,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        },
+        {
+          "index": 11,
+          "input": "c",
+          "target": "ç",
+          "output": "c",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p003",
+      "category": "temel",
+      "input": "aksam yagmur basladi.",
+      "target": "akşam yağmur başladı.",
+      "source_id": "pilot_src_003",
+      "output": "aksam yagmur basladi.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 1,
+          "total": 5,
+          "rate": 0.2
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 17,
+          "total": 17,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 1,
+          "total": 5,
+          "rate": 0.2
+        },
+        "word_preservation": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 4,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 2,
+          "input": "s",
+          "target": "ş",
+          "output": "s",
+          "type": "missing_correction"
+        },
+        {
+          "index": 8,
+          "input": "g",
+          "target": "ğ",
+          "output": "g",
+          "type": "missing_correction"
+        },
+        {
+          "index": 15,
+          "input": "s",
+          "target": "ş",
+          "output": "s",
+          "type": "missing_correction"
+        },
+        {
+          "index": 19,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p004",
+      "category": "baglam",
+      "input": "her sabah ise gidiyor",
+      "target": "her sabah işe gidiyor",
+      "pair_id": "ise_01",
+      "focus_word_index": 2,
+      "source_id": "pilot_src_004",
+      "output": "her sabah ise gidiyor",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 6,
+          "total": 7,
+          "rate": 0.8571428571428571
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 20,
+          "total": 20,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 6,
+          "total": 7,
+          "rate": 0.8571428571428571
+        },
+        "word_preservation": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "ambiguous_word_accuracy": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "ambiguous_word_preservation": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 1,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 11,
+          "input": "s",
+          "target": "ş",
+          "output": "s",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p005",
+      "category": "baglam",
+      "input": "yorgun ise dinlensin",
+      "target": "yorgun ise dinlensin",
+      "pair_id": "ise_01",
+      "focus_word_index": 1,
+      "source_id": "pilot_src_005",
+      "output": "yorgun ise dinlensin",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "candidate_accuracy": {
+          "correct": 8,
+          "total": 8,
+          "rate": 1.0
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        },
+        "character_preservation": {
+          "correct": 20,
+          "total": 20,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 8,
+          "total": 8,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 8,
+          "total": 8,
+          "rate": 1.0
+        },
+        "word_preservation": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "ambiguous_word_accuracy": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "ambiguous_word_preservation": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 0,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": []
+    },
+    {
+      "id": "p006",
+      "category": "baglam",
+      "input": "forvet son dakikada gol atti.",
+      "target": "forvet son dakikada gol attı.",
+      "pair_id": "gol_01",
+      "focus_word_index": 3,
+      "source_id": "pilot_src_006",
+      "output": "forvet son dakikada gol atti.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 6,
+          "total": 7,
+          "rate": 0.8571428571428571
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 28,
+          "total": 28,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 6,
+          "total": 7,
+          "rate": 0.8571428571428571
+        },
+        "word_preservation": {
+          "correct": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "ambiguous_word_accuracy": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "ambiguous_word_preservation": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 1,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 27,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p007",
+      "category": "baglam",
+      "input": "bu gol kis aylarinda tamamen donuyor.",
+      "target": "bu göl kış aylarında tamamen donuyor.",
+      "pair_id": "gol_01",
+      "focus_word_index": 1,
+      "source_id": "pilot_src_007",
+      "output": "bu gol kis aylarinda tamamen donuyor.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 5,
+          "total": 9,
+          "rate": 0.5555555555555556
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 33,
+          "total": 33,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 5,
+          "total": 5,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 5,
+          "total": 9,
+          "rate": 0.5555555555555556
+        },
+        "word_preservation": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "ambiguous_word_accuracy": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "ambiguous_word_preservation": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 4,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 4,
+          "input": "o",
+          "target": "ö",
+          "output": "o",
+          "type": "missing_correction"
+        },
+        {
+          "index": 8,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 9,
+          "input": "s",
+          "target": "ş",
+          "output": "s",
+          "type": "missing_correction"
+        },
+        {
+          "index": 16,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p008",
+      "category": "baglam",
+      "input": "bu otobus duraga cok sik geliyor.",
+      "target": "bu otobüs durağa çok sık geliyor.",
+      "pair_id": "sik_01",
+      "focus_word_index": 4,
+      "source_id": "pilot_src_008",
+      "output": "bu otobus duraga cok sik geliyor.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 10,
+          "total": 14,
+          "rate": 0.7142857142857143
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 29,
+          "total": 29,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 10,
+          "total": 10,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 10,
+          "total": 14,
+          "rate": 0.7142857142857143
+        },
+        "word_preservation": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1.0
+        },
+        "ambiguous_word_accuracy": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "ambiguous_word_preservation": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 4,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 7,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        },
+        {
+          "index": 14,
+          "input": "g",
+          "target": "ğ",
+          "output": "g",
+          "type": "missing_correction"
+        },
+        {
+          "index": 17,
+          "input": "c",
+          "target": "ç",
+          "output": "c",
+          "type": "missing_correction"
+        },
+        {
+          "index": 22,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p009",
+      "category": "baglam",
+      "input": "dugunde cok sik bir elbise giydi.",
+      "target": "düğünde çok şık bir elbise giydi.",
+      "pair_id": "sik_01",
+      "focus_word_index": 2,
+      "source_id": "pilot_src_009",
+      "output": "dugunde cok sik bir elbise giydi.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 7,
+          "total": 13,
+          "rate": 0.5384615384615384
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 6,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 27,
+          "total": 27,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 7,
+          "total": 7,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 7,
+          "total": 13,
+          "rate": 0.5384615384615384
+        },
+        "word_preservation": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "ambiguous_word_accuracy": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "ambiguous_word_preservation": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 6,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 1,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        },
+        {
+          "index": 2,
+          "input": "g",
+          "target": "ğ",
+          "output": "g",
+          "type": "missing_correction"
+        },
+        {
+          "index": 3,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        },
+        {
+          "index": 8,
+          "input": "c",
+          "target": "ç",
+          "output": "c",
+          "type": "missing_correction"
+        },
+        {
+          "index": 12,
+          "input": "s",
+          "target": "ş",
+          "output": "s",
+          "type": "missing_correction"
+        },
+        {
+          "index": 13,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p010",
+      "category": "baglam",
+      "input": "bu kalemin ucu kirildi.",
+      "target": "bu kalemin ucu kırıldı.",
+      "pair_id": "ucu_01",
+      "focus_word_index": 2,
+      "source_id": "pilot_src_010",
+      "output": "bu kalemin ucu kirildi.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 5,
+          "total": 8,
+          "rate": 0.625
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 3,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 20,
+          "total": 20,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 5,
+          "total": 5,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 5,
+          "total": 8,
+          "rate": 0.625
+        },
+        "word_preservation": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "ambiguous_word_accuracy": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "ambiguous_word_preservation": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 3,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 16,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 18,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 21,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p011",
+      "category": "baglam",
+      "input": "bes yarismacinin ucu finale kaldi.",
+      "target": "beş yarışmacının üçü finale kaldı.",
+      "pair_id": "ucu_01",
+      "focus_word_index": 2,
+      "source_id": "pilot_src_011",
+      "output": "bes yarismacinin ucu finale kaldi.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 2,
+          "total": 11,
+          "rate": 0.18181818181818182
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 9,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 25,
+          "total": 25,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 2,
+          "total": 11,
+          "rate": 0.18181818181818182
+        },
+        "word_preservation": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "ambiguous_word_accuracy": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "ambiguous_word_preservation": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 9,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 2,
+          "input": "s",
+          "target": "ş",
+          "output": "s",
+          "type": "missing_correction"
+        },
+        {
+          "index": 7,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 8,
+          "input": "s",
+          "target": "ş",
+          "output": "s",
+          "type": "missing_correction"
+        },
+        {
+          "index": 12,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 14,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 17,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        },
+        {
+          "index": 18,
+          "input": "c",
+          "target": "ç",
+          "output": "c",
+          "type": "missing_correction"
+        },
+        {
+          "index": 19,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        },
+        {
+          "index": 32,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p012",
+      "category": "ozel_isim_yabanci",
+      "input": "Google uzerinden arama yaptim.",
+      "target": "Google üzerinden arama yaptım.",
+      "source_id": "pilot_src_012",
+      "output": "Google uzerinden arama yaptim.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 5,
+          "total": 7,
+          "rate": 0.7142857142857143
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 2,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 28,
+          "total": 28,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 5,
+          "total": 5,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 5,
+          "total": 7,
+          "rate": 0.7142857142857143
+        },
+        "word_preservation": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 2,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 7,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        },
+        {
+          "index": 27,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p013",
+      "category": "ozel_isim_yabanci",
+      "input": "Ankara'ya yarin gidiyorum.",
+      "target": "Ankara'ya yarın gidiyorum.",
+      "source_id": "pilot_src_013",
+      "output": "Ankara'ya yarin gidiyorum.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 5,
+          "total": 6,
+          "rate": 0.8333333333333334
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 25,
+          "total": 25,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 5,
+          "total": 5,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 5,
+          "total": 6,
+          "rate": 0.8333333333333334
+        },
+        "word_preservation": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 1,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 13,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p014",
+      "category": "ozel_isim_yabanci",
+      "input": "toplantidan sonra mail attim.",
+      "target": "toplantıdan sonra mail attım.",
+      "source_id": "pilot_src_014",
+      "output": "toplantidan sonra mail attim.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 4,
+          "total": 6,
+          "rate": 0.6666666666666666
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 2,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 27,
+          "total": 27,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 4,
+          "total": 6,
+          "rate": 0.6666666666666666
+        },
+        "word_preservation": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 2,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 7,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 26,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p015",
+      "category": "ozel_isim_yabanci",
+      "input": "Zoom toplantisi uc saat surdu.",
+      "target": "Zoom toplantısı üç saat sürdü.",
+      "source_id": "pilot_src_015",
+      "output": "Zoom toplantisi uc saat surdu.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 6,
+          "total": 12,
+          "rate": 0.5
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 6,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 24,
+          "total": 24,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 6,
+          "total": 12,
+          "rate": 0.5
+        },
+        "word_preservation": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 6,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 12,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 14,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 16,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        },
+        {
+          "index": 17,
+          "input": "c",
+          "target": "ç",
+          "output": "c",
+          "type": "missing_correction"
+        },
+        {
+          "index": 25,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        },
+        {
+          "index": 28,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p016",
+      "category": "ozel_isim_yabanci",
+      "input": "Python kodunu bugun calistirdim.",
+      "target": "Python kodunu bugün çalıştırdım.",
+      "source_id": "pilot_src_016",
+      "output": "Python kodunu bugun calistirdim.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 6,
+          "total": 12,
+          "rate": 0.5
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 6,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 26,
+          "total": 26,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 6,
+          "total": 12,
+          "rate": 0.5
+        },
+        "word_preservation": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 6,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 17,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        },
+        {
+          "index": 20,
+          "input": "c",
+          "target": "ç",
+          "output": "c",
+          "type": "missing_correction"
+        },
+        {
+          "index": 23,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 24,
+          "input": "s",
+          "target": "ş",
+          "output": "s",
+          "type": "missing_correction"
+        },
+        {
+          "index": 26,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 29,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p017",
+      "category": "kismen_turkce",
+      "input": "ögrenci kartı",
+      "target": "öğrenci kartı",
+      "source_id": "pilot_src_017",
+      "output": "ögrenci kartı",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 2,
+          "total": 3,
+          "rate": 0.6666666666666666
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 12,
+          "total": 12,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 2,
+          "total": 3,
+          "rate": 0.6666666666666666
+        },
+        "word_preservation": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 1,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 1,
+          "input": "g",
+          "target": "ğ",
+          "output": "g",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p018",
+      "category": "kismen_turkce",
+      "input": "ögrenci kartini unutmusum",
+      "target": "öğrenci kartını unutmuşum",
+      "source_id": "pilot_src_017",
+      "output": "ögrenci kartini unutmusum",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 6,
+          "total": 10,
+          "rate": 0.6
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 21,
+          "total": 21,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 6,
+          "total": 10,
+          "rate": 0.6
+        },
+        "word_preservation": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 4,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 1,
+          "input": "g",
+          "target": "ğ",
+          "output": "g",
+          "type": "missing_correction"
+        },
+        {
+          "index": 12,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 14,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 22,
+          "input": "s",
+          "target": "ş",
+          "output": "s",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p019",
+      "category": "kismen_turkce",
+      "input": "çocuklar bahçede oynuyor, kuslar ötüyor.",
+      "target": "çocuklar bahçede oynuyor, kuşlar ötüyor.",
+      "source_id": "pilot_src_019",
+      "output": "çocuklar bahçede oynuyor, kuslar ötüyor.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 8,
+          "total": 9,
+          "rate": 0.8888888888888888
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 39,
+          "total": 39,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 8,
+          "total": 8,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 8,
+          "total": 9,
+          "rate": 0.8888888888888888
+        },
+        "word_preservation": {
+          "correct": 4,
+          "total": 4,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 1,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 28,
+          "input": "s",
+          "target": "ş",
+          "output": "s",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p020",
+      "category": "kismen_turkce",
+      "input": "bugün gökyüzü cok acik.",
+      "target": "bugün gökyüzü çok açık.",
+      "source_id": "pilot_src_020",
+      "output": "bugün gökyüzü cok acik.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 4,
+          "total": 7,
+          "rate": 0.5714285714285714
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 3,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 20,
+          "total": 20,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 4,
+          "total": 7,
+          "rate": 0.5714285714285714
+        },
+        "word_preservation": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 3,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 14,
+          "input": "c",
+          "target": "ç",
+          "output": "c",
+          "type": "missing_correction"
+        },
+        {
+          "index": 19,
+          "input": "c",
+          "target": "ç",
+          "output": "c",
+          "type": "missing_correction"
+        },
+        {
+          "index": 20,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p021",
+      "category": "yazim_hatasi_kisaltma",
+      "input": "yarin gelicem",
+      "target": "yarın gelicem",
+      "source_id": "pilot_src_021",
+      "output": "yarin gelicem",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 3,
+          "total": 4,
+          "rate": 0.75
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 12,
+          "total": 12,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 3,
+          "total": 4,
+          "rate": 0.75
+        },
+        "word_preservation": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 1,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 3,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p022",
+      "category": "yazim_hatasi_kisaltma",
+      "input": "slm, bugun goruselim mi?",
+      "target": "slm, bugün görüşelim mi?",
+      "source_id": "pilot_src_022",
+      "output": "slm, bugun goruselim mi?",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 6,
+          "total": 10,
+          "rate": 0.6
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 20,
+          "total": 20,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 6,
+          "total": 10,
+          "rate": 0.6
+        },
+        "word_preservation": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 4,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 8,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        },
+        {
+          "index": 12,
+          "input": "o",
+          "target": "ö",
+          "output": "o",
+          "type": "missing_correction"
+        },
+        {
+          "index": 14,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        },
+        {
+          "index": 15,
+          "input": "s",
+          "target": "ş",
+          "output": "s",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p023",
+      "category": "yazim_hatasi_kisaltma",
+      "input": "nbr, aksam musait misin?",
+      "target": "nbr, akşam müsait misin?",
+      "source_id": "pilot_src_023",
+      "output": "nbr, aksam musait misin?",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 5,
+          "total": 7,
+          "rate": 0.7142857142857143
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 2,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 22,
+          "total": 22,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 5,
+          "total": 5,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 5,
+          "total": 7,
+          "rate": 0.7142857142857143
+        },
+        "word_preservation": {
+          "correct": 2,
+          "total": 2,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 2,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 7,
+          "input": "s",
+          "target": "ş",
+          "output": "s",
+          "type": "missing_correction"
+        },
+        {
+          "index": 12,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p024",
+      "category": "yazim_hatasi_kisaltma",
+      "input": "tmm, cikinca ararim",
+      "target": "tmm, çıkınca ararım",
+      "source_id": "pilot_src_024",
+      "output": "tmm, cikinca ararim",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 1,
+          "total": 5,
+          "rate": 0.2
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 15,
+          "total": 15,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 1,
+          "total": 5,
+          "rate": 0.2
+        },
+        "word_preservation": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 4,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 5,
+          "input": "c",
+          "target": "ç",
+          "output": "c",
+          "type": "missing_correction"
+        },
+        {
+          "index": 6,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 8,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 17,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p025",
+      "category": "buyuk_harf",
+      "input": "IZMIR",
+      "target": "İZMİR",
+      "source_id": "pilot_src_025",
+      "output": "IZMIR",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 0,
+          "total": 2,
+          "rate": 0.0
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 2,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 0,
+          "total": 2,
+          "rate": 0.0
+        },
+        "word_preservation": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 2,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 0,
+          "input": "I",
+          "target": "İ",
+          "output": "I",
+          "type": "missing_correction"
+        },
+        {
+          "index": 3,
+          "input": "I",
+          "target": "İ",
+          "output": "I",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p026",
+      "category": "buyuk_harf",
+      "input": "Isik yandi",
+      "target": "Işık yandı",
+      "source_id": "pilot_src_026",
+      "output": "Isik yandi",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 1,
+          "total": 4,
+          "rate": 0.25
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 3,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 7,
+          "total": 7,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 1,
+          "total": 4,
+          "rate": 0.25
+        },
+        "word_preservation": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 3,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 1,
+          "input": "s",
+          "target": "ş",
+          "output": "s",
+          "type": "missing_correction"
+        },
+        {
+          "index": 2,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 9,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p027",
+      "category": "buyuk_harf",
+      "input": "Istanbul'a gidiyoruz",
+      "target": "İstanbul'a gidiyoruz",
+      "source_id": "pilot_src_027",
+      "output": "Istanbul'a gidiyoruz",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 7,
+          "total": 8,
+          "rate": 0.875
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 19,
+          "total": 19,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 7,
+          "total": 7,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 7,
+          "total": 8,
+          "rate": 0.875
+        },
+        "word_preservation": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 1,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 0,
+          "input": "I",
+          "target": "İ",
+          "output": "I",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p028",
+      "category": "buyuk_harf",
+      "input": "COCUK SUT ICTI.",
+      "target": "ÇOCUK SÜT İÇTİ.",
+      "source_id": "pilot_src_002",
+      "output": "COCUK SUT ICTI.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 4,
+          "total": 9,
+          "rate": 0.4444444444444444
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 5,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 10,
+          "total": 10,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 4,
+          "total": 9,
+          "rate": 0.4444444444444444
+        },
+        "word_preservation": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 5,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 0,
+          "input": "C",
+          "target": "Ç",
+          "output": "C",
+          "type": "missing_correction"
+        },
+        {
+          "index": 7,
+          "input": "U",
+          "target": "Ü",
+          "output": "U",
+          "type": "missing_correction"
+        },
+        {
+          "index": 10,
+          "input": "I",
+          "target": "İ",
+          "output": "I",
+          "type": "missing_correction"
+        },
+        {
+          "index": 11,
+          "input": "C",
+          "target": "Ç",
+          "output": "C",
+          "type": "missing_correction"
+        },
+        {
+          "index": 13,
+          "input": "I",
+          "target": "İ",
+          "output": "I",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p029",
+      "category": "bicim_koruma",
+      "input": "saat 15.00'te  www.ornek.com adresini ac :) 🌞",
+      "target": "saat 15.00'te  www.ornek.com adresini aç :) 🌞",
+      "source_id": "pilot_src_029",
+      "output": "saat 15.00'te  www.ornek.com adresini ac :) 🌞",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 7,
+          "total": 8,
+          "rate": 0.875
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 44,
+          "total": 44,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 7,
+          "total": 7,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 7,
+          "total": 8,
+          "rate": 0.875
+        },
+        "word_preservation": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 1,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 39,
+          "input": "c",
+          "target": "ç",
+          "output": "c",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p030",
+      "category": "bicim_koruma",
+      "input": "  bugun\t3 kisi geldi!\nyarin  2 kisi gelecek.  ",
+      "target": "  bugün\t3 kişi geldi!\nyarın  2 kişi gelecek.  ",
+      "source_id": "pilot_src_030",
+      "output": "  bugun\t3 kisi geldi!\nyarin  2 kisi gelecek.  ",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 10,
+          "total": 14,
+          "rate": 0.7142857142857143
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 42,
+          "total": 42,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 10,
+          "total": 10,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 10,
+          "total": 14,
+          "rate": 0.7142857142857143
+        },
+        "word_preservation": {
+          "correct": 4,
+          "total": 4,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 4,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 5,
+          "input": "u",
+          "target": "ü",
+          "output": "u",
+          "type": "missing_correction"
+        },
+        {
+          "index": 12,
+          "input": "s",
+          "target": "ş",
+          "output": "s",
+          "type": "missing_correction"
+        },
+        {
+          "index": 25,
+          "input": "i",
+          "target": "ı",
+          "output": "i",
+          "type": "missing_correction"
+        },
+        {
+          "index": 33,
+          "input": "s",
+          "target": "ş",
+          "output": "s",
+          "type": "missing_correction"
+        }
+      ]
+    },
+    {
+      "id": "p031",
+      "category": "zaten_dogru",
+      "subcategory": "turkce_karakterli",
+      "input": "öğrenci kartını unutmuşum",
+      "target": "öğrenci kartını unutmuşum",
+      "source_id": "pilot_src_017",
+      "output": "öğrenci kartını unutmuşum",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "candidate_accuracy": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        },
+        "character_preservation": {
+          "correct": 25,
+          "total": 25,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "word_preservation": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 0,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": []
+    },
+    {
+      "id": "p032",
+      "category": "zaten_dogru",
+      "subcategory": "turkce_karakterli",
+      "input": "Bugün öğle yemeği çok güzeldi.",
+      "target": "Bugün öğle yemeği çok güzeldi.",
+      "source_id": "pilot_src_032",
+      "output": "Bugün öğle yemeği çok güzeldi.",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "candidate_accuracy": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        },
+        "character_preservation": {
+          "correct": 30,
+          "total": 30,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "word_preservation": {
+          "correct": 5,
+          "total": 5,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 0,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": []
+    },
+    {
+      "id": "p033",
+      "category": "zaten_dogru",
+      "subcategory": "turkce_karakter_gerektirmeyen",
+      "input": "herkes evde beklesin",
+      "target": "herkes evde beklesin",
+      "source_id": "pilot_src_033",
+      "output": "herkes evde beklesin",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "candidate_accuracy": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        },
+        "character_preservation": {
+          "correct": 20,
+          "total": 20,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "word_preservation": {
+          "correct": 3,
+          "total": 3,
+          "rate": 1.0
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 0,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": []
+    },
+    {
+      "id": "p034",
+      "source_id": "pilot_src_034",
+      "category": "buyuk_harf",
+      "input": "OGRETMEN SEHIRDE",
+      "target": "ÖĞRETMEN ŞEHİRDE",
+      "output": "OGRETMEN SEHIRDE",
+      "metrics": {
+        "strict_compliance": {
+          "correct": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 0,
+          "total": 1,
+          "rate": 0.0
+        },
+        "candidate_accuracy": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 12,
+          "total": 12,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "word_preservation": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 4,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      },
+      "error_positions": [
+        {
+          "index": 0,
+          "input": "O",
+          "target": "Ö",
+          "output": "O",
+          "type": "missing_correction"
+        },
+        {
+          "index": 1,
+          "input": "G",
+          "target": "Ğ",
+          "output": "G",
+          "type": "missing_correction"
+        },
+        {
+          "index": 9,
+          "input": "S",
+          "target": "Ş",
+          "output": "S",
+          "type": "missing_correction"
+        },
+        {
+          "index": 12,
+          "input": "I",
+          "target": "İ",
+          "output": "I",
+          "type": "missing_correction"
+        }
+      ]
+    }
+  ]
+}
