@@ -32,6 +32,31 @@ class EvaluationTests(unittest.TestCase):
             self.assertEqual(r['errors']['unalignable'], 1)
             self.assertEqual(r['error_positions'], [])
 
+    def test_unaligned_missing_count_is_unobserved_not_success(self):
+        r = example('cok', 'çok', 'çok!')
+        self.assertEqual(r['errors']['missing_correction'], 0)
+        self.assertEqual(r['errors']['unalignable'], 1)
+        self.assertEqual(r['metrics']['required_correction'],
+                         {'correct': 0, 'total': 1, 'rate': 0})
+
+    def test_equal_length_does_not_imply_compliance(self):
+        r = example('cok iyi', 'çok iyi', 'cok iyi'.upper())
+        self.assertEqual(r['errors']['unalignable'], 0)
+        self.assertEqual(r['errors']['rule_violation'], 1)
+        self.assertEqual(r['metrics']['candidate_accuracy']['correct'], 0)
+
+    def test_candidate_accuracy_is_micro_averaged_and_partitioned(self):
+        rows = [example('cok', 'çok', 'çok'), example('iiii', 'ıııı', 'iiii'),
+                example('s', 'ş', 'ş!')]
+        result = aggregate(rows)['metrics']
+        self.assertEqual(result['candidate_accuracy'],
+                         {'correct': 2, 'total': 7, 'rate': 2 / 7})
+        for key in ('correct', 'total'):
+            self.assertEqual(result['candidate_accuracy'][key],
+                             result['required_correction'][key]
+                             + result['candidate_preservation'][key])
+        self.assertEqual(result['candidate_accuracy_compliant_only']['total'], 6)
+
     def test_nfc_only_and_raw_output(self):
         raw = 'c\u0327ok'
         r = example('cok', 'çok', raw)

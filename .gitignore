@@ -221,3 +221,6 @@ __marimo__/
 
 # Downloaded corpus cache (pinned checksums in configs/data-source.json)
 data/raw/
+
+# Local adapters and optimizer checkpoints
+runs/

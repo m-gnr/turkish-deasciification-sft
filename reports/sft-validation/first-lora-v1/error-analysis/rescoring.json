@@ -1,0 +1,29 @@
+{
+  "status": "exact_match",
+  "systems": [
+    "pre_zero_shot",
+    "pre_five_shot",
+    "sft_zero_shot",
+    "sft_five_shot",
+    "identity"
+  ],
+  "hashes": {
+    "data/prepared/boun-v1/splits/validation.jsonl": "156ac8ac05691d0ec668ad43e54b3918ead51520f73fa187cc64d212a06660cd",
+    "data/prepared/boun-v1/splits/train.jsonl": "48cd9494bd76b6a6fbaabdeac88ace006094662115e53cc9f48e8debc7da3b56",
+    "reports/baselines/boun-v1-pre-sft.json": "8ec7d353305b5454fd87a9dc112e75c9cb63aa04bf85533d9e96f121f96bbaaf",
+    "reports/validation-prompts/boun-v1-20261015-batch8/zero_shot.jsonl": "eaf7742ef0f731ec5bde08ff55dad2885f71eb9e1489e130dcb2e08b217a54f6",
+    "reports/validation-prompts/boun-v1-20261015-batch8/zero_shot-scores.json": "7d17a13f9ddcbe1de7ad110daced67799e1d107379386a7cd159f57901d28469",
+    "reports/validation-prompts/boun-v1-20261015-batch8/metadata.json": "63aed7bb14a09c08ce83bff49a21cc1a692e70c680ce8ff2c0d0b8d54dcfcd0d",
+    "reports/validation-prompts/boun-v1-20261015-batch8/comparison.json": "d1f9a652ec8337ec4e21fea5b4b1047d5ef935a440a6f3e99d356bba3a181f2e",
+    "reports/validation-prompts/boun-v1-20261015-batch8/five_shot-scores.json": "fa138ea36cfaf438c7317fba929adf0d5ce756b8e7fa537838a63d3ccf918fd2",
+    "reports/validation-prompts/boun-v1-20261015-batch8/demonstrations.json": "d5886ccca59e5355adf1e6ab9c2f8e344fd2c53373927e5ead1529c988837d3f",
+    "reports/validation-prompts/boun-v1-20261015-batch8/five_shot.jsonl": "26102468824875b023469d1637c499bbcc466788860573d0b05cabcc09a35d7d",
+    "reports/validation-prompts/boun-v1-20261015-batch8/identity-scores.json": "8c85f5b1f93e0808213828aee27f3b40e03e267b1371441edb7d48249b15a4de",
+    "reports/sft-validation/first-lora-v1/zero_shot.jsonl": "3bbde9f1b2213fc977a8f1e15209fa281f2f31901d1774f6c992d1de86eaa83f",
+    "reports/sft-validation/first-lora-v1/zero_shot-scores.json": "b12d008a67fadfefdb8b265247528257fb5b927360b1653893a3f05b4bde6eb3",
+    "reports/sft-validation/first-lora-v1/metadata.json": "9b0953e1dd98651b80ea1a6e1a86765bee3250a4079135a17c7383d14bb82b72",
+    "reports/sft-validation/first-lora-v1/comparison.json": "ce159e660145361d509c321d508c7ff691c92bc7880e1d609007e1beb20c8d69",
+    "reports/sft-validation/first-lora-v1/five_shot-scores.json": "59f09b8d7964ff03d6c9e8255674a1ad40b1e787cf6ff7c20fa6b785d82243e2",
+    "reports/sft-validation/first-lora-v1/five_shot.jsonl": "39c59f04120ba18fd0bb43416f07660b1a89dc2a34570db7ba70c19e2988c88c"
+  }
+}

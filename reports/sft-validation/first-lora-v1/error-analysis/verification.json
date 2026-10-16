@@ -1,0 +1,18 @@
+{
+  "unit_test_command": ".venv/bin/python -m unittest discover -s tests",
+  "unit_tests_passed": 40,
+  "failures": 0,
+  "artifact_checks": [
+    "category totals equal violations",
+    "paired 2x2 totals 900",
+    "40 unique annotated review examples",
+    "all postprocessing outputs compliant",
+    "protected hashes unchanged"
+  ],
+  "code_sha256": {
+    "scripts/analyze_sft_errors.py": "a5fa407db6025f78a3a61e83113ddd8df1a0c2de6486586e30b626d264045775",
+    "tests/test_sft_error_analysis.py": "397c906b7c339036cbc9c12ab07b4f71c02346c27a49b0fdb9dd0349f5962e2e"
+  },
+  "manual_notes_sha256": "85a74efaa608c1982bda23fe75a748a63884184a5066d0eef1a0670e28ad2955",
+  "scope": "Only train/validation and saved outputs; no generation or retraining; held-out test never read by analysis."
+}

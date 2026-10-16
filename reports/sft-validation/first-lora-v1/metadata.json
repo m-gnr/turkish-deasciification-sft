@@ -1,0 +1,42 @@
+{
+  "status": "complete",
+  "training_run": "runs/first-sft-v1/training",
+  "baseline_sha256": "8ec7d353305b5454fd87a9dc112e75c9cb63aa04bf85533d9e96f121f96bbaaf",
+  "validation_sha256": "156ac8ac05691d0ec668ad43e54b3918ead51520f73fa187cc64d212a06660cd",
+  "device": "mps",
+  "dtype": "torch.float16",
+  "protocol": {
+    "split": "validation",
+    "examples": 900,
+    "conditions": [
+      "zero_shot",
+      "five_shot"
+    ],
+    "demonstrations": "reports/validation-prompts/boun-v1-20261015-batch8/demonstrations.json",
+    "batch_size": 8,
+    "max_new_tokens": 256,
+    "do_sample": false,
+    "enable_thinking": false,
+    "selection": "strict_compliance first, sentence_exact as tie breaker",
+    "test": "Evaluate the separate 900 test examples only after checkpoint and prompt selection is frozen."
+  },
+  "seed": 0,
+  "adapter_sha256": {
+    "adapter_model.safetensors": "51bda0ba8676c76de6366e7256e767be5d125d431e1c8075cc6442894ed1e37a",
+    "adapter_config.json": "f7c5283aa0ce101fd4dd9de7f46161c419011bd666b1ccf0eed608071bc4e977"
+  },
+  "code_sha256": "325c1c2fd8f45ca1a4f84f2d044bbc532dfbb2e124716070ef1e8187e147be87",
+  "started_at": "2026-10-16T09:17:03.374179+00:00",
+  "completed": {
+    "zero_shot": 900,
+    "five_shot": 900
+  },
+  "finished_at": "2026-10-16T09:55:36.221753+00:00",
+  "output_sha256": {
+    "zero_shot.jsonl": "3bbde9f1b2213fc977a8f1e15209fa281f2f31901d1774f6c992d1de86eaa83f",
+    "zero_shot-scores.json": "b12d008a67fadfefdb8b265247528257fb5b927360b1653893a3f05b4bde6eb3",
+    "comparison.json": "ce159e660145361d509c321d508c7ff691c92bc7880e1d609007e1beb20c8d69",
+    "five_shot-scores.json": "59f09b8d7964ff03d6c9e8255674a1ad40b1e787cf6ff7c20fa6b785d82243e2",
+    "five_shot.jsonl": "39c59f04120ba18fd0bb43416f07660b1a89dc2a34570db7ba70c19e2988c88c"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "seed": 42,
+  "pool_sizes": {
+    "regression": 12,
+    "improvement": 254,
+    "violation": 310,
+    "compliant_wrong": 196
+  },
+  "reservation_order": [
+    "regression:5",
+    "improvement:5",
+    "violation:20",
+    "compliant_wrong:10"
+  ]
+}

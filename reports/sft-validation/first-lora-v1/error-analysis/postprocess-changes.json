@@ -1,0 +1,26 @@
+{
+  "zero_shot_fallback": {
+    "changed_outputs": 310,
+    "exact_gained": 7,
+    "exact_lost": 0,
+    "compliant_outputs_changed": 0
+  },
+  "zero_shot_repair": {
+    "changed_outputs": 310,
+    "exact_gained": 106,
+    "exact_lost": 0,
+    "compliant_outputs_changed": 0
+  },
+  "five_shot_fallback": {
+    "changed_outputs": 307,
+    "exact_gained": 12,
+    "exact_lost": 0,
+    "compliant_outputs_changed": 0
+  },
+  "five_shot_repair": {
+    "changed_outputs": 307,
+    "exact_gained": 99,
+    "exact_lost": 0,
+    "compliant_outputs_changed": 0
+  }
+}

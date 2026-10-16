@@ -1,0 +1,42 @@
+{
+  "invalid_targets": [],
+  "source_overlap": [],
+  "overlap": {
+    "input_exact": [],
+    "input_normalized": [],
+    "target_exact": [],
+    "target_normalized": []
+  },
+  "sequence_tokens_including_prompt_and_eos": {
+    "min": 173.0,
+    "p25": 194.0,
+    "median": 211.0,
+    "p75": 239.0,
+    "p95": 303.0,
+    "p99": 364.6099999999997,
+    "max": 506.0
+  },
+  "above_1024": 0,
+  "split_mix": {
+    "train": {
+      "n": 7340,
+      "categories": {
+        "tam": 4404,
+        "kismi": 1835,
+        "koruma": 1101
+      },
+      "needs_correction": 6239,
+      "preservation": 1101
+    },
+    "validation": {
+      "n": 900,
+      "categories": {
+        "kismi": 225,
+        "tam": 540,
+        "koruma": 135
+      },
+      "needs_correction": 765,
+      "preservation": 135
+    }
+  }
+}

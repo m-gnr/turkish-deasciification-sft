@@ -235,3 +235,13 @@ raporunu üretir. Mevcut çıktı klasörüne yazılmaz.
 .venv/bin/python -m scripts.compare_prompts --output reports/validation-prompts/boun-v1-rerun
 .venv/bin/python -m scripts.report_prompt_comparison reports/validation-prompts/boun-v1-rerun
 ```
+
+## İlk SFT hazırlığı ve yerel koşu
+
+16 Ekim 2026: [40 hata örneği](reports/error-review/boun-v1-20261016/README.md)
+incelendi; 1.800 model çıktısı ve 900 identity çıktısının puanları yeniden doğrulandı.
+[Sabit baseline](reports/baselines/boun-v1-pre-sft.json) ve
+[LoRA çalıştırma rehberi](docs/first-sft.md) eklendi. 30 otomatik kontrol geçti.
+Tam koşu durumu `runs/first-sft-v1/pipeline.json` içindedir; eğitim sonrası ölçüm
+`reports/sft-validation/first-lora-v1/` altında oluşur. Eğitim tamamlanmadan SFT
+başarısı, model seçimi tamamlanmadan nihai test sonucu iddia edilmez.

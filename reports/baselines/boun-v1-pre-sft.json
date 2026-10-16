@@ -1,0 +1,241 @@
+{
+  "baseline_id": "qwen3-1.7b-boun-v1-pre-sft-batch8",
+  "run": "reports/validation-prompts/boun-v1-20261015-batch8",
+  "model": "Qwen/Qwen3-1.7B",
+  "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "verification": "All saved example scores, summaries, categories and recorded output hashes match.",
+  "evaluation_policy": "NFC only; any rule violation zeros all primary character/word units. Error counts are overlapping diagnostics; unequal-length outputs have no positional error counts.",
+  "post_sft_protocol": {
+    "split": "validation",
+    "examples": 900,
+    "conditions": [
+      "zero_shot",
+      "five_shot"
+    ],
+    "demonstrations": "reports/validation-prompts/boun-v1-20261015-batch8/demonstrations.json",
+    "batch_size": 8,
+    "max_new_tokens": 256,
+    "do_sample": false,
+    "enable_thinking": false,
+    "selection": "strict_compliance first, sentence_exact as tie breaker",
+    "test": "Evaluate the separate 900 test examples only after checkpoint and prompt selection is frozen."
+  },
+  "sha256": {
+    "reports/validation-prompts/boun-v1-20261015-batch8/comparison.json": "d1f9a652ec8337ec4e21fea5b4b1047d5ef935a440a6f3e99d356bba3a181f2e",
+    "reports/validation-prompts/boun-v1-20261015-batch8/demonstrations.json": "d5886ccca59e5355adf1e6ab9c2f8e344fd2c53373927e5ead1529c988837d3f",
+    "reports/validation-prompts/boun-v1-20261015-batch8/five_shot-scores.json": "fa138ea36cfaf438c7317fba929adf0d5ce756b8e7fa537838a63d3ccf918fd2",
+    "reports/validation-prompts/boun-v1-20261015-batch8/identity-scores.json": "8c85f5b1f93e0808213828aee27f3b40e03e267b1371441edb7d48249b15a4de",
+    "reports/validation-prompts/boun-v1-20261015-batch8/metadata.json": "63aed7bb14a09c08ce83bff49a21cc1a692e70c680ce8ff2c0d0b8d54dcfcd0d",
+    "reports/validation-prompts/boun-v1-20261015-batch8/zero_shot-scores.json": "7d17a13f9ddcbe1de7ad110daced67799e1d107379386a7cd159f57901d28469",
+    "reports/validation-prompts/boun-v1-20261015-batch8/five_shot.jsonl": "26102468824875b023469d1637c499bbcc466788860573d0b05cabcc09a35d7d",
+    "reports/validation-prompts/boun-v1-20261015-batch8/zero_shot.jsonl": "eaf7742ef0f731ec5bde08ff55dad2885f71eb9e1489e130dcb2e08b217a54f6",
+    "data/prepared/boun-v1/splits/train.jsonl": "48cd9494bd76b6a6fbaabdeac88ace006094662115e53cc9f48e8debc7da3b56",
+    "data/prepared/boun-v1/splits/validation.jsonl": "156ac8ac05691d0ec668ad43e54b3918ead51520f73fa187cc64d212a06660cd",
+    "deasciification/evaluation.py": "3fc6479159cde66e97e54b37d48024812c9ad90df4b1c7d020cace81d0de8298",
+    "deasciification/config.py": "8ae59b5aa9b3b0120767c456aa244b43f724b3e03579c0dd6cc5cc317b681ba9",
+    "deasciification/inference.py": "355eea82ae6f7551db422a5f77053e285569556c848bd7a4693c23ac0bf4b30f",
+    "deasciification/prompting.py": "3b63d6d42408082fe93c7311ea9240ec2fcb96881ed93174bc736b241defe626"
+  },
+  "summary": {
+    "zero_shot": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 663,
+          "total": 900,
+          "rate": 0.7366666666666667
+        },
+        "sentence_exact": {
+          "correct": 152,
+          "total": 900,
+          "rate": 0.1688888888888889
+        },
+        "candidate_accuracy": {
+          "correct": 8741,
+          "total": 17289,
+          "rate": 0.5055815836659148
+        },
+        "required_correction": {
+          "correct": 564,
+          "total": 5257,
+          "rate": 0.10728552406315389
+        },
+        "character_preservation": {
+          "correct": 46148,
+          "total": 67667,
+          "rate": 0.6819867882424224
+        },
+        "candidate_preservation": {
+          "correct": 8177,
+          "total": 12032,
+          "rate": 0.6796043882978723
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 8741,
+          "total": 11583,
+          "rate": 0.754640421307088
+        },
+        "word_preservation": {
+          "correct": 4400,
+          "total": 6259,
+          "rate": 0.70298769771529
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 237,
+        "unalignable": 203,
+        "missing_correction": 2947,
+        "unnecessary_correction": 3,
+        "wrongly_changed_word": 121
+      }
+    },
+    "five_shot": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 453,
+          "total": 900,
+          "rate": 0.5033333333333333
+        },
+        "sentence_exact": {
+          "correct": 187,
+          "total": 900,
+          "rate": 0.20777777777777778
+        },
+        "candidate_accuracy": {
+          "correct": 5789,
+          "total": 17289,
+          "rate": 0.334837179709642
+        },
+        "required_correction": {
+          "correct": 925,
+          "total": 5257,
+          "rate": 0.1759558683659882
+        },
+        "character_preservation": {
+          "correct": 27338,
+          "total": 67667,
+          "rate": 0.4040078620302363
+        },
+        "candidate_preservation": {
+          "correct": 4864,
+          "total": 12032,
+          "rate": 0.40425531914893614
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 5789,
+          "total": 6640,
+          "rate": 0.8718373493975904
+        },
+        "word_preservation": {
+          "correct": 2747,
+          "total": 6259,
+          "rate": 0.43888800127815947
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 447,
+        "unalignable": 353,
+        "missing_correction": 1099,
+        "unnecessary_correction": 17,
+        "wrongly_changed_word": 311
+      }
+    },
+    "identity": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 900,
+          "total": 900,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 135,
+          "total": 900,
+          "rate": 0.15
+        },
+        "candidate_accuracy": {
+          "correct": 12032,
+          "total": 17289,
+          "rate": 0.6959338307594424
+        },
+        "required_correction": {
+          "correct": 0,
+          "total": 5257,
+          "rate": 0.0
+        },
+        "character_preservation": {
+          "correct": 67667,
+          "total": 67667,
+          "rate": 1.0
+        },
+        "candidate_preservation": {
+          "correct": 12032,
+          "total": 12032,
+          "rate": 1.0
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 12032,
+          "total": 17289,
+          "rate": 0.6959338307594424
+        },
+        "word_preservation": {
+          "correct": 6259,
+          "total": 6259,
+          "rate": 1.0
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 5257,
+        "unnecessary_correction": 0,
+        "wrongly_changed_word": 0
+      }
+    }
+  },
+  "diagnostics": {
+    "zero_shot": {
+      "equal_length_examples": 697,
+      "unequal_length_examples": 203,
+      "required_positions_in_equal_length_outputs": 3621,
+      "required_positions_in_unequal_length_outputs": 1636,
+      "candidate_positions_penalized_by_noncompliance": 5706,
+      "identity_outputs": 432,
+      "token_limit_outputs": 0
+    },
+    "five_shot": {
+      "equal_length_examples": 547,
+      "unequal_length_examples": 353,
+      "required_positions_in_equal_length_outputs": 2437,
+      "required_positions_in_unequal_length_outputs": 2820,
+      "candidate_positions_penalized_by_noncompliance": 10649,
+      "identity_outputs": 154,
+      "token_limit_outputs": 0
+    },
+    "identity": {
+      "equal_length_examples": 900,
+      "unequal_length_examples": 0,
+      "required_positions_in_equal_length_outputs": 5257,
+      "required_positions_in_unequal_length_outputs": 0,
+      "candidate_positions_penalized_by_noncompliance": 0,
+      "identity_outputs": 900,
+      "token_limit_outputs": 0
+    }
+  }
+}
