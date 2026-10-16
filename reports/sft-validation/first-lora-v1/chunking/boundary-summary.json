@@ -1,0 +1,18 @@
+{
+  "120": {
+    "boundaries": 230,
+    "trailing_whitespace_changed": 205,
+    "leading_whitespace_changed": 0,
+    "terminal_punctuation_changed": 0,
+    "sentences_with_boundary_symptom": 163,
+    "previously_compliant_new_violation_with_boundary_symptom": 65
+  },
+  "80": {
+    "boundaries": 555,
+    "trailing_whitespace_changed": 473,
+    "leading_whitespace_changed": 0,
+    "terminal_punctuation_changed": 2,
+    "sentences_with_boundary_symptom": 313,
+    "previously_compliant_new_violation_with_boundary_symptom": 148
+  }
+}

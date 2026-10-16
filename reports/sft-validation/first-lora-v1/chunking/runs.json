@@ -1,0 +1,36 @@
+[
+  {
+    "stage": "calibrate",
+    "approval_note": "Kullanıcı ilk 50 parça için 1–3 dakikalık kalibrasyon üretimini evet diyerek onayladı; kalan üretim yetkisi verilmedi.",
+    "status": "complete",
+    "started_at": "2026-10-16T11:18:08.611555+00:00",
+    "requested_pieces": 50,
+    "completed_pieces": 50,
+    "generation_seconds": 41.72591066616587,
+    "load_seconds": 10.847203750163317,
+    "device": "mps",
+    "dtype": "torch.float16",
+    "eos_token_ids": [
+      151643,
+      151645
+    ],
+    "wall_seconds": 52.582274083048105
+  },
+  {
+    "stage": "run",
+    "approval_note": "Kullanıcı kalan 1248 parçanın 12–26 dakika tahminiyle üretilmesini ve sonuç raporunun tamamlanmasını evet diyerek onayladı.",
+    "status": "complete",
+    "started_at": "2026-10-16T17:29:33.750963+00:00",
+    "requested_pieces": 1248,
+    "completed_pieces": 1248,
+    "generation_seconds": 718.8825978320092,
+    "load_seconds": 10.673435541801155,
+    "device": "mps",
+    "dtype": "torch.float16",
+    "eos_token_ids": [
+      151643,
+      151645
+    ],
+    "wall_seconds": 729.6927497088909
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "tests_passed": 56,
+  "failures": 0,
+  "command": ".venv/bin/python -m unittest discover -s tests",
+  "production_generation_started": true,
+  "validation_roundtrips": 1800,
+  "protected_file_count": 54,
+  "protected_hashes_unchanged": true,
+  "runner_sha256": "5ea5e29b2975335994066a5824d70541e521f4407dc66845da3e1484e74f798f",
+  "tests_sha256": "1198a38db2acb2f1eabeb0bb96306e4ebc4b3e8e5916667034c28a3e39fa8be6",
+  "generated_pieces": 1298,
+  "remaining_generation_started": true,
+  "remaining_generation_complete": true,
+  "all_generated_outputs_end_in_eos": true,
+  "generated_outputs_hitting_token_limit": 0,
+  "reused_and_candidate_free_outputs_verified": true,
+  "baseline_repair_fallback_metrics_match": true,
+  "script_sha256": {
+    "scripts/run_chunking.py": "5ea5e29b2975335994066a5824d70541e521f4407dc66845da3e1484e74f798f",
+    "scripts/finalize_chunking.py": "75dab3c9e5fb88753a3d5d7433ad1515f4b88919360ab7c6df8b735891439bf1"
+  },
+  "test_sha256": {
+    "tests/test_chunking.py": "1198a38db2acb2f1eabeb0bb96306e4ebc4b3e8e5916667034c28a3e39fa8be6",
+    "tests/test_chunking_review.py": "d85b98dcdd540d42b33dd753d73ec69ab32f51f26d9727023bd353c62335f086"
+  }
+}

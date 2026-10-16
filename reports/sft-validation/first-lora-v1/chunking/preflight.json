@@ -1,0 +1,13 @@
+{
+  "all_1800_split_roundtrips_byte_exact": true,
+  "word_boundary_checks_passed": true,
+  "length_checks_passed": true,
+  "baseline_generation_seconds": 875.2634212460835,
+  "generated_pieces_required": 1298,
+  "naive_seconds_using_old_per_example_rate": 1262.3243564193515,
+  "calibration_preliminary_estimate_minutes": [
+    1,
+    3
+  ],
+  "estimate_caveat": "Different chunk lengths/batches; first 50 must be timed before full run."
+}

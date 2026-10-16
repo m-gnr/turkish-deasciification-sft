@@ -1,0 +1,28 @@
+{
+  "120": {
+    "checks": {
+      "compliance_ci_low_positive": false,
+      "exact_noninferiority_2pp": false,
+      "candidate31_compliance_increased": false,
+      "length121_compliance_increased": false
+    },
+    "worked_under_frozen_rule": false,
+    "slice_compliance_deltas": {
+      "candidates31+": -0.25,
+      "length121+": -0.3672316384180791
+    }
+  },
+  "80": {
+    "checks": {
+      "compliance_ci_low_positive": false,
+      "exact_noninferiority_2pp": false,
+      "candidate31_compliance_increased": false,
+      "length121_compliance_increased": false
+    },
+    "worked_under_frozen_rule": false,
+    "slice_compliance_deltas": {
+      "candidates31+": -0.3092105263157895,
+      "length121+": -0.3615819209039548
+    }
+  }
+}

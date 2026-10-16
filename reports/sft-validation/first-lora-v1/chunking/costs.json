@@ -1,0 +1,27 @@
+{
+  "baseline_generation_seconds": 875.2634212460835,
+  "total_run_wall_seconds": 782.275023791939,
+  "total_load_seconds": 21.52063929196447,
+  "total_generation_seconds": 760.6085084981751,
+  "note": "Mixed A/B batches: per-setting generation time is amortized, not isolated wall time.",
+  "settings": {
+    "120": {
+      "generated_pieces": 403,
+      "generation_seconds": 251.72924156155204,
+      "seconds_per_generated_piece": 0.6246383165299059,
+      "incremental_vs_baseline_ratio": 0.2876039777866799,
+      "estimated_cold_all900_seconds": 940.2603493140778,
+      "estimated_cold_vs_baseline_ratio": 1.0742598473673906,
+      "reused_historical_seconds": 688.5311077525257
+    },
+    "80": {
+      "generated_pieces": 895,
+      "generation_seconds": 508.879266936623,
+      "seconds_per_generated_piece": 0.5685801865213665,
+      "incremental_vs_baseline_ratio": 0.5814012725587784,
+      "estimated_cold_all900_seconds": 1034.605601080053,
+      "estimated_cold_vs_baseline_ratio": 1.1820505415468172,
+      "reused_historical_seconds": 525.72633414343
+    }
+  }
+}

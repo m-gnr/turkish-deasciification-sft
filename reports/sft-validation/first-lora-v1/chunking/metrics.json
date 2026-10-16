@@ -1,0 +1,1055 @@
+{
+  "sft_zero_shot": {
+    "all": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 590,
+          "total": 900,
+          "rate": 0.6555555555555556
+        },
+        "sentence_exact": {
+          "correct": 394,
+          "total": 900,
+          "rate": 0.43777777777777777
+        },
+        "candidate_accuracy": {
+          "correct": 8383,
+          "total": 17289,
+          "rate": 0.4848747758690497
+        },
+        "required_correction": {
+          "correct": 2003,
+          "total": 5257,
+          "rate": 0.38101578847251283
+        },
+        "character_preservation": {
+          "correct": 36563,
+          "total": 67667,
+          "rate": 0.5403372397180309
+        },
+        "candidate_preservation": {
+          "correct": 6380,
+          "total": 12032,
+          "rate": 0.5302526595744681
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 8383,
+          "total": 8731,
+          "rate": 0.9601420226778147
+        },
+        "word_preservation": {
+          "correct": 3682,
+          "total": 6259,
+          "rate": 0.5882728870426586
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 310,
+        "unalignable": 237,
+        "missing_correction": 338,
+        "unnecessary_correction": 124,
+        "wrongly_changed_word": 241
+      }
+    },
+    "compliant_only": {
+      "examples": 590,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 590,
+          "total": 590,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 394,
+          "total": 590,
+          "rate": 0.6677966101694915
+        },
+        "candidate_accuracy": {
+          "correct": 8383,
+          "total": 8731,
+          "rate": 0.9601420226778147
+        },
+        "required_correction": {
+          "correct": 2003,
+          "total": 2263,
+          "rate": 0.8851082633672117
+        },
+        "character_preservation": {
+          "correct": 36563,
+          "total": 36651,
+          "rate": 0.9975989741071185
+        },
+        "candidate_preservation": {
+          "correct": 6380,
+          "total": 6468,
+          "rate": 0.9863945578231292
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 8383,
+          "total": 8731,
+          "rate": 0.9601420226778147
+        },
+        "word_preservation": {
+          "correct": 3682,
+          "total": 3706,
+          "rate": 0.9935240151106314
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 260,
+        "unnecessary_correction": 88,
+        "wrongly_changed_word": 110
+      }
+    },
+    "equal_length_count": 663
+  },
+  "sft_zero_shot_chunk120": {
+    "all": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 525,
+          "total": 900,
+          "rate": 0.5833333333333334
+        },
+        "sentence_exact": {
+          "correct": 356,
+          "total": 900,
+          "rate": 0.39555555555555555
+        },
+        "candidate_accuracy": {
+          "correct": 6248,
+          "total": 17289,
+          "rate": 0.36138585227601366
+        },
+        "required_correction": {
+          "correct": 1539,
+          "total": 5257,
+          "rate": 0.29275252044892525
+        },
+        "character_preservation": {
+          "correct": 26729,
+          "total": 67667,
+          "rate": 0.3950079063649933
+        },
+        "candidate_preservation": {
+          "correct": 4709,
+          "total": 12032,
+          "rate": 0.3913730053191489
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 6248,
+          "total": 6531,
+          "rate": 0.9566681978257541
+        },
+        "word_preservation": {
+          "correct": 2692,
+          "total": 6259,
+          "rate": 0.43010065505671835
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 375,
+        "unalignable": 306,
+        "missing_correction": 263,
+        "unnecessary_correction": 97,
+        "wrongly_changed_word": 337
+      }
+    },
+    "compliant_only": {
+      "examples": 525,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 525,
+          "total": 525,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 356,
+          "total": 525,
+          "rate": 0.6780952380952381
+        },
+        "candidate_accuracy": {
+          "correct": 6248,
+          "total": 6531,
+          "rate": 0.9566681978257541
+        },
+        "required_correction": {
+          "correct": 1539,
+          "total": 1752,
+          "rate": 0.8784246575342466
+        },
+        "character_preservation": {
+          "correct": 26729,
+          "total": 26799,
+          "rate": 0.9973879622373969
+        },
+        "candidate_preservation": {
+          "correct": 4709,
+          "total": 4779,
+          "rate": 0.9853525842226407
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 6248,
+          "total": 6531,
+          "rate": 0.9566681978257541
+        },
+        "word_preservation": {
+          "correct": 2692,
+          "total": 2709,
+          "rate": 0.9937246216315984
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 213,
+        "unnecessary_correction": 70,
+        "wrongly_changed_word": 85
+      }
+    },
+    "equal_length_count": 594
+  },
+  "sft_zero_shot_chunk80": {
+    "all": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 442,
+          "total": 900,
+          "rate": 0.4911111111111111
+        },
+        "sentence_exact": {
+          "correct": 306,
+          "total": 900,
+          "rate": 0.34
+        },
+        "candidate_accuracy": {
+          "correct": 4406,
+          "total": 17289,
+          "rate": 0.2548441205390711
+        },
+        "required_correction": {
+          "correct": 1076,
+          "total": 5257,
+          "rate": 0.2046794749857333
+        },
+        "character_preservation": {
+          "correct": 19166,
+          "total": 67667,
+          "rate": 0.28323998403948747
+        },
+        "candidate_preservation": {
+          "correct": 3330,
+          "total": 12032,
+          "rate": 0.2767619680851064
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 4406,
+          "total": 4624,
+          "rate": 0.9528546712802768
+        },
+        "word_preservation": {
+          "correct": 1978,
+          "total": 6259,
+          "rate": 0.3160249241092826
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 458,
+        "unalignable": 400,
+        "missing_correction": 204,
+        "unnecessary_correction": 68,
+        "wrongly_changed_word": 275
+      }
+    },
+    "compliant_only": {
+      "examples": 442,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 442,
+          "total": 442,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 306,
+          "total": 442,
+          "rate": 0.6923076923076923
+        },
+        "candidate_accuracy": {
+          "correct": 4406,
+          "total": 4624,
+          "rate": 0.9528546712802768
+        },
+        "required_correction": {
+          "correct": 1076,
+          "total": 1245,
+          "rate": 0.8642570281124498
+        },
+        "character_preservation": {
+          "correct": 19166,
+          "total": 19215,
+          "rate": 0.9974499089253187
+        },
+        "candidate_preservation": {
+          "correct": 3330,
+          "total": 3379,
+          "rate": 0.985498668245043
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 4406,
+          "total": 4624,
+          "rate": 0.9528546712802768
+        },
+        "word_preservation": {
+          "correct": 1978,
+          "total": 1993,
+          "rate": 0.9924736578023081
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 169,
+        "unnecessary_correction": 49,
+        "wrongly_changed_word": 63
+      }
+    },
+    "equal_length_count": 500
+  },
+  "sft_zero_shot_repair": {
+    "all": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 900,
+          "total": 900,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 500,
+          "total": 900,
+          "rate": 0.5555555555555556
+        },
+        "candidate_accuracy": {
+          "correct": 16413,
+          "total": 17289,
+          "rate": 0.9493319451674475
+        },
+        "required_correction": {
+          "correct": 4584,
+          "total": 5257,
+          "rate": 0.8719802168537188
+        },
+        "character_preservation": {
+          "correct": 67464,
+          "total": 67667,
+          "rate": 0.9970000147782523
+        },
+        "candidate_preservation": {
+          "correct": 11829,
+          "total": 12032,
+          "rate": 0.9831283244680851
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 16413,
+          "total": 17289,
+          "rate": 0.9493319451674475
+        },
+        "word_preservation": {
+          "correct": 6199,
+          "total": 6259,
+          "rate": 0.9904138041220643
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 673,
+        "unnecessary_correction": 203,
+        "wrongly_changed_word": 301
+      }
+    },
+    "compliant_only": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 900,
+          "total": 900,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 500,
+          "total": 900,
+          "rate": 0.5555555555555556
+        },
+        "candidate_accuracy": {
+          "correct": 16413,
+          "total": 17289,
+          "rate": 0.9493319451674475
+        },
+        "required_correction": {
+          "correct": 4584,
+          "total": 5257,
+          "rate": 0.8719802168537188
+        },
+        "character_preservation": {
+          "correct": 67464,
+          "total": 67667,
+          "rate": 0.9970000147782523
+        },
+        "candidate_preservation": {
+          "correct": 11829,
+          "total": 12032,
+          "rate": 0.9831283244680851
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 16413,
+          "total": 17289,
+          "rate": 0.9493319451674475
+        },
+        "word_preservation": {
+          "correct": 6199,
+          "total": 6259,
+          "rate": 0.9904138041220643
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 673,
+        "unnecessary_correction": 203,
+        "wrongly_changed_word": 301
+      }
+    },
+    "equal_length_count": 900
+  },
+  "sft_zero_shot_fallback": {
+    "all": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 900,
+          "total": 900,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 401,
+          "total": 900,
+          "rate": 0.44555555555555554
+        },
+        "candidate_accuracy": {
+          "correct": 13947,
+          "total": 17289,
+          "rate": 0.8066979003990977
+        },
+        "required_correction": {
+          "correct": 2003,
+          "total": 5257,
+          "rate": 0.38101578847251283
+        },
+        "character_preservation": {
+          "correct": 67579,
+          "total": 67667,
+          "rate": 0.9986995137954986
+        },
+        "candidate_preservation": {
+          "correct": 11944,
+          "total": 12032,
+          "rate": 0.992686170212766
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 13947,
+          "total": 17289,
+          "rate": 0.8066979003990977
+        },
+        "word_preservation": {
+          "correct": 6235,
+          "total": 6259,
+          "rate": 0.9961655216488257
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 3254,
+        "unnecessary_correction": 88,
+        "wrongly_changed_word": 110
+      }
+    },
+    "compliant_only": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 900,
+          "total": 900,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 401,
+          "total": 900,
+          "rate": 0.44555555555555554
+        },
+        "candidate_accuracy": {
+          "correct": 13947,
+          "total": 17289,
+          "rate": 0.8066979003990977
+        },
+        "required_correction": {
+          "correct": 2003,
+          "total": 5257,
+          "rate": 0.38101578847251283
+        },
+        "character_preservation": {
+          "correct": 67579,
+          "total": 67667,
+          "rate": 0.9986995137954986
+        },
+        "candidate_preservation": {
+          "correct": 11944,
+          "total": 12032,
+          "rate": 0.992686170212766
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 13947,
+          "total": 17289,
+          "rate": 0.8066979003990977
+        },
+        "word_preservation": {
+          "correct": 6235,
+          "total": 6259,
+          "rate": 0.9961655216488257
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 3254,
+        "unnecessary_correction": 88,
+        "wrongly_changed_word": 110
+      }
+    },
+    "equal_length_count": 900
+  },
+  "sft_zero_shot_chunk120_repair": {
+    "all": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 900,
+          "total": 900,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 495,
+          "total": 900,
+          "rate": 0.55
+        },
+        "candidate_accuracy": {
+          "correct": 16407,
+          "total": 17289,
+          "rate": 0.9489849036959916
+        },
+        "required_correction": {
+          "correct": 4594,
+          "total": 5257,
+          "rate": 0.8738824424576754
+        },
+        "character_preservation": {
+          "correct": 67448,
+          "total": 67667,
+          "rate": 0.9967635627410703
+        },
+        "candidate_preservation": {
+          "correct": 11813,
+          "total": 12032,
+          "rate": 0.9817985372340425
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 16407,
+          "total": 17289,
+          "rate": 0.9489849036959916
+        },
+        "word_preservation": {
+          "correct": 6195,
+          "total": 6259,
+          "rate": 0.9897747243968685
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 663,
+        "unnecessary_correction": 219,
+        "wrongly_changed_word": 306
+      }
+    },
+    "compliant_only": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 900,
+          "total": 900,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 495,
+          "total": 900,
+          "rate": 0.55
+        },
+        "candidate_accuracy": {
+          "correct": 16407,
+          "total": 17289,
+          "rate": 0.9489849036959916
+        },
+        "required_correction": {
+          "correct": 4594,
+          "total": 5257,
+          "rate": 0.8738824424576754
+        },
+        "character_preservation": {
+          "correct": 67448,
+          "total": 67667,
+          "rate": 0.9967635627410703
+        },
+        "candidate_preservation": {
+          "correct": 11813,
+          "total": 12032,
+          "rate": 0.9817985372340425
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 16407,
+          "total": 17289,
+          "rate": 0.9489849036959916
+        },
+        "word_preservation": {
+          "correct": 6195,
+          "total": 6259,
+          "rate": 0.9897747243968685
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 663,
+        "unnecessary_correction": 219,
+        "wrongly_changed_word": 306
+      }
+    },
+    "equal_length_count": 900
+  },
+  "sft_zero_shot_chunk120_fallback": {
+    "all": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 900,
+          "total": 900,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 382,
+          "total": 900,
+          "rate": 0.42444444444444446
+        },
+        "candidate_accuracy": {
+          "correct": 13501,
+          "total": 17289,
+          "rate": 0.7809011510208803
+        },
+        "required_correction": {
+          "correct": 1539,
+          "total": 5257,
+          "rate": 0.29275252044892525
+        },
+        "character_preservation": {
+          "correct": 67597,
+          "total": 67667,
+          "rate": 0.9989655223373284
+        },
+        "candidate_preservation": {
+          "correct": 11962,
+          "total": 12032,
+          "rate": 0.9941821808510638
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 13501,
+          "total": 17289,
+          "rate": 0.7809011510208803
+        },
+        "word_preservation": {
+          "correct": 6242,
+          "total": 6259,
+          "rate": 0.9972839111679181
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 3718,
+        "unnecessary_correction": 70,
+        "wrongly_changed_word": 85
+      }
+    },
+    "compliant_only": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 900,
+          "total": 900,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 382,
+          "total": 900,
+          "rate": 0.42444444444444446
+        },
+        "candidate_accuracy": {
+          "correct": 13501,
+          "total": 17289,
+          "rate": 0.7809011510208803
+        },
+        "required_correction": {
+          "correct": 1539,
+          "total": 5257,
+          "rate": 0.29275252044892525
+        },
+        "character_preservation": {
+          "correct": 67597,
+          "total": 67667,
+          "rate": 0.9989655223373284
+        },
+        "candidate_preservation": {
+          "correct": 11962,
+          "total": 12032,
+          "rate": 0.9941821808510638
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 13501,
+          "total": 17289,
+          "rate": 0.7809011510208803
+        },
+        "word_preservation": {
+          "correct": 6242,
+          "total": 6259,
+          "rate": 0.9972839111679181
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 3718,
+        "unnecessary_correction": 70,
+        "wrongly_changed_word": 85
+      }
+    },
+    "equal_length_count": 900
+  },
+  "sft_zero_shot_chunk80_repair": {
+    "all": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 900,
+          "total": 900,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 491,
+          "total": 900,
+          "rate": 0.5455555555555556
+        },
+        "candidate_accuracy": {
+          "correct": 16395,
+          "total": 17289,
+          "rate": 0.94829082075308
+        },
+        "required_correction": {
+          "correct": 4578,
+          "total": 5257,
+          "rate": 0.8708388814913449
+        },
+        "character_preservation": {
+          "correct": 67452,
+          "total": 67667,
+          "rate": 0.9968226757503658
+        },
+        "candidate_preservation": {
+          "correct": 11817,
+          "total": 12032,
+          "rate": 0.9821309840425532
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 16395,
+          "total": 17289,
+          "rate": 0.94829082075308
+        },
+        "word_preservation": {
+          "correct": 6193,
+          "total": 6259,
+          "rate": 0.9894551845342706
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 679,
+        "unnecessary_correction": 215,
+        "wrongly_changed_word": 320
+      }
+    },
+    "compliant_only": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 900,
+          "total": 900,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 491,
+          "total": 900,
+          "rate": 0.5455555555555556
+        },
+        "candidate_accuracy": {
+          "correct": 16395,
+          "total": 17289,
+          "rate": 0.94829082075308
+        },
+        "required_correction": {
+          "correct": 4578,
+          "total": 5257,
+          "rate": 0.8708388814913449
+        },
+        "character_preservation": {
+          "correct": 67452,
+          "total": 67667,
+          "rate": 0.9968226757503658
+        },
+        "candidate_preservation": {
+          "correct": 11817,
+          "total": 12032,
+          "rate": 0.9821309840425532
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 16395,
+          "total": 17289,
+          "rate": 0.94829082075308
+        },
+        "word_preservation": {
+          "correct": 6193,
+          "total": 6259,
+          "rate": 0.9894551845342706
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 679,
+        "unnecessary_correction": 215,
+        "wrongly_changed_word": 320
+      }
+    },
+    "equal_length_count": 900
+  },
+  "sft_zero_shot_chunk80_fallback": {
+    "all": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 900,
+          "total": 900,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 347,
+          "total": 900,
+          "rate": 0.38555555555555554
+        },
+        "candidate_accuracy": {
+          "correct": 13059,
+          "total": 17289,
+          "rate": 0.7553357626236336
+        },
+        "required_correction": {
+          "correct": 1076,
+          "total": 5257,
+          "rate": 0.2046794749857333
+        },
+        "character_preservation": {
+          "correct": 67618,
+          "total": 67667,
+          "rate": 0.9992758656361299
+        },
+        "candidate_preservation": {
+          "correct": 11983,
+          "total": 12032,
+          "rate": 0.9959275265957447
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 13059,
+          "total": 17289,
+          "rate": 0.7553357626236336
+        },
+        "word_preservation": {
+          "correct": 6244,
+          "total": 6259,
+          "rate": 0.9976034510305161
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 4181,
+        "unnecessary_correction": 49,
+        "wrongly_changed_word": 63
+      }
+    },
+    "compliant_only": {
+      "examples": 900,
+      "metrics": {
+        "strict_compliance": {
+          "correct": 900,
+          "total": 900,
+          "rate": 1.0
+        },
+        "sentence_exact": {
+          "correct": 347,
+          "total": 900,
+          "rate": 0.38555555555555554
+        },
+        "candidate_accuracy": {
+          "correct": 13059,
+          "total": 17289,
+          "rate": 0.7553357626236336
+        },
+        "required_correction": {
+          "correct": 1076,
+          "total": 5257,
+          "rate": 0.2046794749857333
+        },
+        "character_preservation": {
+          "correct": 67618,
+          "total": 67667,
+          "rate": 0.9992758656361299
+        },
+        "candidate_preservation": {
+          "correct": 11983,
+          "total": 12032,
+          "rate": 0.9959275265957447
+        },
+        "candidate_accuracy_compliant_only": {
+          "correct": 13059,
+          "total": 17289,
+          "rate": 0.7553357626236336
+        },
+        "word_preservation": {
+          "correct": 6244,
+          "total": 6259,
+          "rate": 0.9976034510305161
+        },
+        "minimal_pair_success": {
+          "correct": 0,
+          "total": 0,
+          "rate": null
+        }
+      },
+      "errors": {
+        "rule_violation": 0,
+        "unalignable": 0,
+        "missing_correction": 4181,
+        "unnecessary_correction": 49,
+        "wrongly_changed_word": 63
+      }
+    },
+    "equal_length_count": 900
+  }
+}

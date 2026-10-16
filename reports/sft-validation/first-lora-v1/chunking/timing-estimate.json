@@ -1,0 +1,12 @@
+{
+  "calibration_pieces": 50,
+  "calibration_generation_seconds": 41.72591066616587,
+  "seconds_per_piece_amortized": 0.8345182133233174,
+  "remaining_pieces": 0,
+  "remaining_generation_seconds_estimate": 0.0,
+  "range_minutes_0_7_to_1_5_multiplier": [
+    0.0,
+    0.0
+  ],
+  "note": "First 50 are fixed, not a random speed sample. Lengths, batch shape and thermal throttling can change rate."
+}

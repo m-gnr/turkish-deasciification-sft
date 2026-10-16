@@ -1,0 +1,11 @@
+{
+  "calibration_pieces": 50,
+  "measured_generation_seconds": 41.72591066616587,
+  "remaining_at_approval": 1248,
+  "forecast_generation_seconds": 1041.4787302275001,
+  "planning_range_minutes": [
+    12.1505851859875,
+    26.036968255687505
+  ],
+  "note": "Recorded retrospectively from immutable first-50 timing records; same estimate presented before continuation approval."
+}

@@ -1,0 +1,66 @@
+{
+  "120": {
+    "seed": 42,
+    "replicates": 10000,
+    "groups": 900,
+    "method": "paired source/pair cluster percentile bootstrap; McNemar assumes independent sentences",
+    "metrics": {
+      "strict_compliance": {
+        "both_yes": 525,
+        "before_only": 65,
+        "after_only": 0,
+        "both_no": 310,
+        "difference": -0.07222222222222222,
+        "ci95": [
+          -0.08888888888888889,
+          -0.05555555555555555
+        ],
+        "mcnemar_exact_two_sided_p": 5.421010862427522e-20
+      },
+      "sentence_exact": {
+        "both_yes": 356,
+        "before_only": 38,
+        "after_only": 0,
+        "both_no": 506,
+        "difference": -0.042222222222222223,
+        "ci95": [
+          -0.05555555555555555,
+          -0.028888888888888888
+        ],
+        "mcnemar_exact_two_sided_p": 7.275957614183426e-12
+      }
+    }
+  },
+  "80": {
+    "seed": 42,
+    "replicates": 10000,
+    "groups": 900,
+    "method": "paired source/pair cluster percentile bootstrap; McNemar assumes independent sentences",
+    "metrics": {
+      "strict_compliance": {
+        "both_yes": 438,
+        "before_only": 152,
+        "after_only": 4,
+        "both_no": 306,
+        "difference": -0.16444444444444445,
+        "ci95": [
+          -0.18891666666666665,
+          -0.1388888888888889
+        ],
+        "mcnemar_exact_two_sided_p": 5.336228192150993e-40
+      },
+      "sentence_exact": {
+        "both_yes": 304,
+        "before_only": 90,
+        "after_only": 2,
+        "both_no": 504,
+        "difference": -0.09777777777777778,
+        "ci95": [
+          -0.11777777777777777,
+          -0.07777777777777778
+        ],
+        "mcnemar_exact_two_sided_p": 1.7282743364816433e-24
+      }
+    }
+  }
+}

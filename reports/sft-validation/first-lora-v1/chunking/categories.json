@@ -1,0 +1,27 @@
+{
+  "sft_zero_shot": {
+    "compliant": 590,
+    "shorter": 122,
+    "letter": 68,
+    "longer": 111,
+    "case": 4,
+    "punctuation": 4,
+    "unalignable": 1
+  },
+  "sft_zero_shot_chunk120": {
+    "compliant": 525,
+    "shorter": 142,
+    "letter": 66,
+    "punctuation": 68,
+    "longer": 96,
+    "case": 3
+  },
+  "sft_zero_shot_chunk80": {
+    "compliant": 442,
+    "shorter": 178,
+    "letter": 55,
+    "punctuation": 148,
+    "longer": 74,
+    "case": 3
+  }
+}
