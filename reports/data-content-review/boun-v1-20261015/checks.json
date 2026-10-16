@@ -1,0 +1,16 @@
+{
+  "review_date": "2026-10-15",
+  "train_path": "data/prepared/boun-v1/splits/train.jsonl",
+  "train_sha256": "48cd9494bd76b6a6fbaabdeac88ace006094662115e53cc9f48e8debc7da3b56",
+  "rows": 7340,
+  "checks": {
+    "allowed_transform_passed": 7340,
+    "derivable_passed": 7340,
+    "variant_passed": 7340,
+    "length_passed": 7340,
+    "whitespace_passed": 7340,
+    "punctuation_passed": 7340,
+    "existing_turkish_passed": 7340,
+    "nfc_passed": 7340
+  }
+}

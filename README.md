@@ -218,3 +218,20 @@ kayıtları verinin yanında tutulur. Eğitim dosyaları `splits/`, denetim kay�
 [klasör rehberi](data/prepared/README.md) dosyaların rollerini açıklar. Veri hazırlama için yedi yeni testle toplam
 20 otomatik kontrol vardır. Sıradaki aşama eğitim örneklerinin içerik kontrolü,
 birkaç örnekli istem karşılaştırması ve küçük SFT denemesidir.
+
+## Doğrulamada sıfır ve beş örnekli istem karşılaştırması
+
+`python -m scripts.compare_prompts --output <yeni-klasör>` doğrulama kümesinin
+tamamında aynı sabit model/yönerge/üretim ayarlarıyla iki koşulu ölçer. Beş örnek
+yalnızca eğitimden deterministik olarak seçilir (3 tam, 1 kısmi, 1 koruma) ve
+bütün doğrulama girdilerinde aynı sırayla kullanılır. Test kümesi açılmaz.
+Ham çıktılar, örnek kimlikleri, veri/kod özetleri, kategori puanları ve
+kaynak/minimal çift grupları üzerinden 2.000 tekrarlı eşleştirilmiş bootstrap
+fark aralıkları kaydedilir. Bu aralıklar istem örneği seçiminin değişkenliğini
+kapsamaz. `scripts.report_prompt_comparison` tamamlanan koşunun okunabilir
+raporunu üretir. Mevcut çıktı klasörüne yazılmaz.
+
+```bash
+.venv/bin/python -m scripts.compare_prompts --output reports/validation-prompts/boun-v1-rerun
+.venv/bin/python -m scripts.report_prompt_comparison reports/validation-prompts/boun-v1-rerun
+```

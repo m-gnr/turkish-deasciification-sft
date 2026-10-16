@@ -1,0 +1,33 @@
+{
+  "model": "Qwen/Qwen3-1.7B",
+  "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "instruction": "Metindeki eksik Türkçe karakterleri bağlama göre geri yükle. Yalnızca şu dönüşümlere izin ver: c→ç, C→Ç, g→ğ, G→Ğ, i→ı, I→İ, o→ö, O→Ö, s→ş, S→Ş, u→ü, U→Ü. Gerekmeyen harfleri değiştirme. Diğer karakterleri, mevcut Türkçe harfleri, boşlukları ve noktalama işaretlerini aynen koru. Yazım hatalarını düzeltme. Yalnızca sonuç metnini yaz; açıklama veya tırnak ekleme.",
+  "device": "mps",
+  "dtype": "torch.float16",
+  "torch": "2.14.1",
+  "transformers": "5.19.0",
+  "seed": 0,
+  "enable_thinking": false,
+  "do_sample": false,
+  "max_new_tokens": 256,
+  "train_sha256": "48cd9494bd76b6a6fbaabdeac88ace006094662115e53cc9f48e8debc7da3b56",
+  "validation_sha256": "156ac8ac05691d0ec668ad43e54b3918ead51520f73fa187cc64d212a06660cd",
+  "demonstrations_sha256": "d5886ccca59e5355adf1e6ab9c2f8e344fd2c53373927e5ead1529c988837d3f",
+  "code_sha256": {
+    "/Users/murat/develop/turkish-deasciification-sft/scripts/compare_prompts.py": "564a4e581b4492113b5de539c602e4826a192bf98d7bc5d329982678695fc54e",
+    "deasciification/config.py": "8ae59b5aa9b3b0120767c456aa244b43f724b3e03579c0dd6cc5cc317b681ba9",
+    "deasciification/evaluation.py": "3fc6479159cde66e97e54b37d48024812c9ad90df4b1c7d020cace81d0de8298",
+    "deasciification/prompting.py": "3b63d6d42408082fe93c7311ea9240ec2fcb96881ed93174bc736b241defe626",
+    "deasciification/__init__.py": "2404d82fe182d2fdc05b39bb2a94ae60fc5c0d2ad96323b5083e2d037481b5f2",
+    "deasciification/inference.py": "7de6778f60494d547c4ca8e91693c3889c48e0c2feffeb2c8025b347f9ed1a7b",
+    "deasciification/data.py": "6fdb4edb009d95fa354386be2883fb4d62439865d2a90233ffff3c679019acf7",
+    "deasciification/validation.py": "5408ead2927e4553ac96ee2418d243f716e0fda5e6b91be74cc512fe49dcb52b"
+  },
+  "started_at": "2026-10-15T18:06:45.198436+00:00",
+  "status": "interrupted",
+  "expected_per_condition": 900,
+  "completed": {
+    "zero_shot": 57
+  },
+  "reason": "Replaced by a full batched run for throughput; partial outputs excluded from comparison"
+}

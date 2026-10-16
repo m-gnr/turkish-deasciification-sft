@@ -1,0 +1,61 @@
+{
+  "selection": "SHA256(few-shot-v1:ID), input length 40..150; 3 tam, 1 kismi, 1 koruma; no validation outcome selection",
+  "examples": [
+    {
+      "category": "tam",
+      "id": "train:boun:ess_1451:tam",
+      "input": "Muminler, bu kaya deliginden gecmeye calisirlar.",
+      "original_file": "tr_boun-ud-train.conllu",
+      "original_sent_id": "ess_1451",
+      "source_id": "boun:ess_1451",
+      "split": "train",
+      "target": "Müminler, bu kaya deliğinden geçmeye çalışırlar.",
+      "variant": "tam"
+    },
+    {
+      "category": "tam",
+      "id": "train:boun:ins_1368:tam",
+      "input": "Demirini topraktan cekti, koselesini durdu, civi kutusunu kapadi, ciris canagini sarmaladi.",
+      "original_file": "tr_boun-ud-train.conllu",
+      "original_sent_id": "ins_1368",
+      "source_id": "boun:ins_1368",
+      "split": "train",
+      "target": "Demirini topraktan çekti, köselesini dürdü, çivi kutusunu kapadı, çiriş çanağını sarmaladı.",
+      "variant": "tam"
+    },
+    {
+      "category": "tam",
+      "id": "train:boun:bio_1878:tam",
+      "input": "Jandarma ve polisler esliginde kirli sakalli, takim elbise giyip kravat takmis elleri kelepceli iki adam giriyor bekleme salonuna.",
+      "original_file": "tr_boun-ud-train.conllu",
+      "original_sent_id": "bio_1878",
+      "source_id": "boun:bio_1878",
+      "split": "train",
+      "target": "Jandarma ve polisler eşliğinde kirli sakallı, takım elbise giyip kravat takmış elleri kelepçeli iki adam giriyor bekleme salonuna.",
+      "variant": "tam"
+    },
+    {
+      "category": "kismi",
+      "id": "train:boun:news_151:kismi",
+      "input": "Bes yıldır Palermo'da yasiyorum ve hiç tehdit almamistım.",
+      "original_file": "tr_boun-ud-train.conllu",
+      "original_sent_id": "news_151",
+      "source_id": "boun:news_151",
+      "split": "train",
+      "target": "Beş yıldır Palermo'da yaşıyorum ve hiç tehdit almamıştım.",
+      "variant": "kismi"
+    },
+    {
+      "category": "koruma",
+      "id": "train:boun:ess_1026:koruma",
+      "input": "Vurgun yiyen tek bacaklı Sinan Kaptan mercanları ızgaraya koymuş...",
+      "original_file": "tr_boun-ud-train.conllu",
+      "original_sent_id": "ess_1026",
+      "source_id": "boun:ess_1026",
+      "split": "train",
+      "subcategory": "turkce_karakterli",
+      "target": "Vurgun yiyen tek bacaklı Sinan Kaptan mercanları ızgaraya koymuş...",
+      "variant": "koruma"
+    }
+  ]
+}
