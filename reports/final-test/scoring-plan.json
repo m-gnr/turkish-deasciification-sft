@@ -1,0 +1,5 @@
+{
+  "script_sha256": "d6b0f5a110f212974521059a4969623a73f2981b0beafcc0d078acd9713ce47e",
+  "prepared_before_test_scoring": true,
+  "method": "Frozen bootstrap protocol; same existing scorer and repair; 10000 source/pair cluster resamples, numpy default_rng(42), marginal percentile intervals and paired repair-comparator intervals."
+}

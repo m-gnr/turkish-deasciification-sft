@@ -1,0 +1,28 @@
+{
+  "normalization": "scripts/analyze_sft_errors.py:normalized ile aynı: NFC, Türkçe küçük harf, diakritik katlama, re.sub(r\"\\W+\", \"\", text)",
+  "counts": {
+    "train": 7340,
+    "validation": 900,
+    "test": 900
+  },
+  "comparisons": {
+    "test_vs_train/input/exact": 0,
+    "test_vs_train/input/nfc": 0,
+    "test_vs_train/input/normalized": 0,
+    "test_vs_train/target/exact": 0,
+    "test_vs_train/target/nfc": 0,
+    "test_vs_train/target/normalized": 0,
+    "test_vs_train/source_id": 0,
+    "test_vs_train/pair_id": 0,
+    "test_vs_validation/input/exact": 0,
+    "test_vs_validation/input/nfc": 0,
+    "test_vs_validation/input/normalized": 0,
+    "test_vs_validation/target/exact": 0,
+    "test_vs_validation/target/nfc": 0,
+    "test_vs_validation/target/normalized": 0,
+    "test_vs_validation/source_id": 0,
+    "test_vs_validation/pair_id": 0
+  },
+  "matches": [],
+  "passed": true
+}

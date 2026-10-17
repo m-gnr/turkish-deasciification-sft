@@ -1,0 +1,145 @@
+{
+  "status": "awaiting_generation_approval",
+  "git_commit": "596d47dc70632c5b59f271b2d38712377fd66321",
+  "git_status_at_freeze": "",
+  "model": "Qwen/Qwen3-1.7B",
+  "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "adapter": {
+    "name": "first-lora-v1",
+    "path": "runs/first-sft-v1/training/adapter",
+    "verified_against": "reports/sft-validation/first-lora-v1/metadata.json"
+  },
+  "prompt": {
+    "condition": "zero_shot",
+    "system": "Metindeki eksik Türkçe karakterleri bağlama göre geri yükle. Yalnızca şu dönüşümlere izin ver: c→ç, C→Ç, g→ğ, G→Ğ, i→ı, I→İ, o→ö, O→Ö, s→ş, S→Ş, u→ü, U→Ü. Gerekmeyen harfleri değiştirme. Diğer karakterleri, mevcut Türkçe harfleri, boşlukları ve noktalama işaretlerini aynen koru. Yazım hatalarını düzeltme. Yalnızca sonuç metnini yaz; açıklama veya tırnak ekleme.",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Metindeki eksik Türkçe karakterleri bağlama göre geri yükle. Yalnızca şu dönüşümlere izin ver: c→ç, C→Ç, g→ğ, G→Ğ, i→ı, I→İ, o→ö, O→Ö, s→ş, S→Ş, u→ü, U→Ü. Gerekmeyen harfleri değiştirme. Diğer karakterleri, mevcut Türkçe harfleri, boşlukları ve noktalama işaretlerini aynen koru. Yazım hatalarını düzeltme. Yalnızca sonuç metnini yaz; açıklama veya tırnak ekleme."
+      },
+      {
+        "role": "user",
+        "content": "{input}"
+      }
+    ],
+    "examples": [],
+    "enable_thinking": false,
+    "add_generation_prompt": true
+  },
+  "generation": {
+    "batch_size": 8,
+    "max_new_tokens": 256,
+    "do_sample": false,
+    "seed": 0,
+    "padding_side": "left",
+    "chunking": false,
+    "device": "mps",
+    "dtype": "float16"
+  },
+  "repair": "scripts/analyze_sft_errors.py:repair, tek-parça ham çıktı",
+  "file_sha256": {
+    "runs/first-sft-v1/training/adapter/adapter_model.safetensors": "51bda0ba8676c76de6366e7256e767be5d125d431e1c8075cc6442894ed1e37a",
+    "runs/first-sft-v1/training/adapter/tokenizer_config.json": "e6544a519c8f14e4ba35ce38f3b579aaf4d39d856d18eda6b186c811eafd1eb6",
+    "runs/first-sft-v1/training/adapter/tokenizer.json": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+    "runs/first-sft-v1/training/adapter/README.md": "7580bf8de69547f09962e6e9ac8f70b2d0dcfb140bbdc2e97aa6237e950ff449",
+    "runs/first-sft-v1/training/adapter/adapter_config.json": "f7c5283aa0ce101fd4dd9de7f46161c419011bd666b1ccf0eed608071bc4e977",
+    "runs/first-sft-v1/training/adapter/chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+    "deasciification/config.py": "8ae59b5aa9b3b0120767c456aa244b43f724b3e03579c0dd6cc5cc317b681ba9",
+    "deasciification/prompting.py": "3b63d6d42408082fe93c7311ea9240ec2fcb96881ed93174bc736b241defe626",
+    "deasciification/inference.py": "355eea82ae6f7551db422a5f77053e285569556c848bd7a4693c23ac0bf4b30f",
+    "deasciification/evaluation.py": "3fc6479159cde66e97e54b37d48024812c9ad90df4b1c7d020cace81d0de8298",
+    "scripts/analyze_sft_errors.py": "a5fa407db6025f78a3a61e83113ddd8df1a0c2de6486586e30b626d264045775",
+    "scripts/compare_prompts.py": "aa97d17629013aa56a84619c009d0f6d1d0083b136ab0f6b00b2d2739bdd767c",
+    "scripts/evaluate_adapter.py": "325c1c2fd8f45ca1a4f84f2d044bbc532dfbb2e124716070ef1e8187e147be87",
+    "reports/final-test/generate_once.py": "10e10cc09f30fec9e079ddc4f3a6b8dec62248184101f352947956c5dfa0070c",
+    "/Users/murat/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e/config.json": "1ddb5b89ebc90dcb417a45c213d818577e65976454d29385c8f6140771d95197",
+    "/Users/murat/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e/generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+    "/Users/murat/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e/tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+    "/Users/murat/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e/tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "/Users/murat/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e/merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "/Users/murat/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e/vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "datasets": {
+    "train": {
+      "path": "data/prepared/boun-v1/splits/train.jsonl",
+      "sha256": "48cd9494bd76b6a6fbaabdeac88ace006094662115e53cc9f48e8debc7da3b56",
+      "examples": 7340
+    },
+    "validation": {
+      "path": "data/prepared/boun-v1/splits/validation.jsonl",
+      "sha256": "156ac8ac05691d0ec668ad43e54b3918ead51520f73fa187cc64d212a06660cd",
+      "examples": 900
+    },
+    "test": {
+      "path": "data/prepared/boun-v1/splits/test.jsonl",
+      "sha256": "6d88b80ca8d9610154a8b02c85092d8c0d0ba6cf29b0b08fde6527f368a16447",
+      "examples": 900
+    }
+  },
+  "overlap_audit_sha256": "bc3092d2d10d7654916f4634dab5c32faa61310bfd6677a05ad343326642be7a",
+  "test_generation_started": false,
+  "generation_function": "deasciification/inference.py:generate_batch",
+  "generation_driver": "reports/final-test/generate_once.py",
+  "base_generation_config": {
+    "bos_token_id": 151643,
+    "do_sample": true,
+    "eos_token_id": [
+      151645,
+      151643
+    ],
+    "pad_token_id": 151643,
+    "temperature": 0.6,
+    "top_k": 20,
+    "top_p": 0.95,
+    "transformers_version": "4.51.0"
+  },
+  "runtime_versions": {
+    "torch": "2.14.1",
+    "transformers": "5.19.0",
+    "peft": "0.21.2",
+    "tokenizers": "0.23.3",
+    "safetensors": "0.8.0"
+  },
+  "bootstrap_protocol": {
+    "method": "source/pair cluster percentile bootstrap",
+    "reference": "scripts/analyze_sft_errors.py:paired; deasciification/evaluation.py:resampling_groups",
+    "seed": 42,
+    "replicates": 10000,
+    "confidence": 0.95,
+    "metrics": [
+      "strict_compliance",
+      "sentence_exact",
+      "candidate_accuracy",
+      "required_correction"
+    ],
+    "errors": [
+      "unnecessary_correction",
+      "wrongly_changed_word"
+    ],
+    "note": "Aynı küme örnekleme yöntemiyle sistemlerin marjinal GA; U/W toplam sayıları. Doğrulama-test farkı eşleştirilmiş değildir."
+  },
+  "time_estimate": {
+    "basis": {
+      "pre_zero_shot": {
+        "validation_examples": 900,
+        "validation_seconds": 818.7057034191675,
+        "projected_test_seconds": 818.7057034191675
+      },
+      "sft_zero_shot": {
+        "validation_examples": 900,
+        "validation_seconds": 875.2634212460835,
+        "projected_test_seconds": 875.2634212460835
+      }
+    },
+    "projected_generation_minutes": 28.23281874442085,
+    "note": "Aynı MPS donanımı ve benzer uzunluk dağılımı varsayımı; model yükleme ve raporlama hariç."
+  },
+  "systems": [
+    "identity",
+    "pre_zero_shot",
+    "sft_zero_shot",
+    "sft_zero_shot_fallback",
+    "sft_zero_shot_repair"
+  ],
+  "generation_policy": "Her örnek için temel model bir kez ve SFT bir kez; fallback/repair aynı ham SFT çıktısından. Yalnız belgelenmiş altyapı hatasında tekrar; test sonucuna göre değişiklik yok."
+}
